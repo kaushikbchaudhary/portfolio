@@ -27,9 +27,10 @@ export type Project = {
   thumbnail: string;
   heroImage: string;
   description: string;
+  platform: string;
   tech: string[];
   links: {
-    demo: string;
+    demo?: string;
     github: string;
   };
   about: string;
