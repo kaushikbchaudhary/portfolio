@@ -2,8 +2,8 @@
   {
     "title": "KMT Healthcare Platform",
     "slug": "kmt-healthcare-platform",
-    "thumbnail": "/projects/dashboard.svg",
-    "heroImage": "/projects/dashboard.svg",
+    "thumbnail": "/projects/oomcardiodev.projectkmt.com_login.png",
+    "heroImage": "/projects/oomcardiodev.projectkmt.com_login.png",
     "description": "React + Next.js patient monitoring portal with multilingual dashboards, theming, and clinic-ready workflows.",
     "tech": ["React", "Next.js", "Express", "MongoDB", "Tailwind"],
     "links": {
@@ -21,8 +21,8 @@
   {
     "title": "OOM ECG Analyzer Platform",
     "slug": "oom-ecg-analyzer-platform",
-    "thumbnail": "/projects/oom-cardio.svg",
-    "heroImage": "/projects/oom-cardio.svg",
+    "thumbnail": "/projects/oea.oomcardio.com_login.png",
+    "heroImage": "/projects/oea.oomcardio.com_login.png",
     "description": "Clinic interface for ECG uploads, AI analysis, and live review queues powered by React and WebSocket.",
     "tech": ["React", "Next.js", "WebSocket", "REST APIs"],
     "links": {
@@ -40,8 +40,8 @@
   {
     "title": "Quality Management System (QMS)",
     "slug": "quality-management-system",
-    "thumbnail": "/projects/qms-suite.svg",
-    "heroImage": "/projects/qms-suite.svg",
+    "thumbnail": "/projects/qms.oomcardio.com_auth_login.png",
+    "heroImage": "/projects/qms.oomcardio.com_auth_login.png",
     "description": "Role-based dashboards that coordinate QA, support, and hardware teams with localization and theming.",
     "tech": ["React", "Shadcn UI", "Jest", "RBAC"],
     "links": {
