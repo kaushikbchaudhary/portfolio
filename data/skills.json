@@ -1,0 +1,18 @@
+[
+  {
+    "category": "Core Development",
+    "items": ["TypeScript", "Next.js", "React", "Node.js", "GraphQL", "tRPC"]
+  },
+  {
+    "category": "DevOps / Infrastructure",
+    "items": ["AWS", "Azure", "Docker", "Kubernetes", "Terraform", "GitHub Actions"]
+  },
+  {
+    "category": "IoT & Device Communication",
+    "items": ["BLE", "Wi-Fi", "MQTT", "ESP32", "OTA Updates", "Device Provisioning"]
+  },
+  {
+    "category": "Medical Domain",
+    "items": ["FHIR", "HL7", "ECG", "ISO13485", "QMS", "HIPAA"]
+  }
+]

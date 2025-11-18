@@ -1,0 +1,14 @@
+{
+  "name": "YOUR NAME",
+  "role": "Full-Stack Developer • Medical IoT • Healthcare Systems",
+  "value": "I build high-scale medical platforms, ECG analysis systems, real-time IoT integrations, and backend architectures.",
+  "heroImage": "/avatar.svg",
+  "resumeUrl": "/../kaushik_chaudhary_cv_.pdf",
+  "location": "Remote • Open to Relocation",
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/placeholder",
+    "github": "https://github.com/placeholder",
+    "email": "mailto:hello@example.com",
+    "whatsapp": "https://wa.me/1234567890"
+  }
+}

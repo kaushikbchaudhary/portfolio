@@ -1,0 +1,5 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="450" rx="32" fill="#ecfccb" />
+  <rect x="80" y="120" width="640" height="210" rx="24" fill="#fff" stroke="#bef264" stroke-width="4" />
+  <text x="50%" y="230" font-size="36" text-anchor="middle" fill="#365314" font-family="'Inter', sans-serif">QMS & ERP Suite</text>
+</svg>

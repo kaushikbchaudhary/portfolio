@@ -1,0 +1,32 @@
+[
+  {
+    "company": "MedSync Health",
+    "role": "Lead Full-Stack Engineer",
+    "period": "2021 — Present",
+    "bullets": [
+      "Scaled ECG cloud services to 10x throughput while meeting FDA Part 11 controls.",
+      "Led cross-functional pods delivering BLE mobile apps, IoT firmware, and clinician UIs.",
+      "Drove reliability OKRs with chaos drills and golden-path monitoring dashboards."
+    ]
+  },
+  {
+    "company": "VitaSystems",
+    "role": "Senior Software Engineer",
+    "period": "2018 — 2021",
+    "bullets": [
+      "Built QMS + ERP suite used by 4 global manufacturing sites.",
+      "Implemented SOC2 + HIPAA practices with privacy-by-design architectural reviews.",
+      "Created analytics pipelines translating device telemetry into actionable ops alerts."
+    ]
+  },
+  {
+    "company": "CardioLabs",
+    "role": "Software Engineer",
+    "period": "2015 — 2018",
+    "bullets": [
+      "Developed arrhythmia detection services with cardiology SMEs.",
+      "Automated test harnesses for BLE peripherals and ECG signal validation.",
+      "Shipped first cloud-native release enabling remote patient monitoring."
+    ]
+  }
+]
