@@ -1,0 +1,16 @@
+{
+  "name": "Kaushik Chaudhary",
+  "role": "Frontend Engineer • React / MERN Stack • Real-Time Systems",
+  "value": "Frontend engineer building React and Next.js products for medical IoT platforms, real-time ECG analytics, and healthcare-grade dashboards.",
+  "heroImage": "/avatar.svg",
+  "resumeUrl": "/resume.pdf",
+  "location": "Ahmedabad, Gujarat, India",
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/kaushik-chaudhary-84aa16264/",
+    "github": "https://github.com/kaushikbchaudhary",
+    "email": "mailto:kaushikbchaudhary@gmail.com",
+    "whatsapp": "https://wa.me/919427565176",
+    "gitlab": "https://gitlab.com/kaushik-kmt",
+    "portfolio": "https://jovial-unicorn-99a6ca.netlify.app/"
+  }
+}

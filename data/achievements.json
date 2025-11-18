@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Hospital dashboards launched in year one",
+    "description": "Shipped responsive clinician workspaces for Kali Med Tech deployments across multiple clinics.",
+    "icon": "stethoscope"
+  },
+  {
+    "title": "Realtime ECG & BLE device streaming",
+    "description": "Built live telemetry interfaces handling WebSocket, BLE, and UART integrations for ECG hardware.",
+    "icon": "heartbeat"
+  },
+  {
+    "title": "Inventory & quality workflows",
+    "description": "Owned device inventory tracking, allocation, and QMS UI delivering audit-ready workflows.",
+    "icon": "workflow"
+  },
+  {
+    "title": "Commerce-to-tech transition",
+    "description": "Completed BCA while working, moving from commerce to software with MERN stack expertise.",
+    "icon": "signal"
+  }
+]

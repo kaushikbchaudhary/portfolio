@@ -1,0 +1,23 @@
+[
+  {
+    "company": "Kali Med Tech",
+    "role": "Frontend Engineer (React / MERN Stack)",
+    "period": "Jan 2024 — Present",
+    "bullets": [
+      "Build and maintain the KMT healthcare platform with React, Next.js, Express, and MongoDB across multiple clinics.",
+      "Create multilingual, themeable dashboards plus responsive layouts for clinicians, support, QA, and hardware teams.",
+      "Develop ECG visualization modules that stream BLE/WebSocket data and surface AI insights in real time.",
+      "Own device inventory, allocation, and analytics views while collaborating with backend + QA pods for releases."
+    ]
+  },
+  {
+    "company": "BytParity",
+    "role": "Frontend Developer Intern",
+    "period": "2023",
+    "bullets": [
+      "Learned modern React patterns, Git collaboration, and API integration through production prototypes.",
+      "Converted Figma designs into responsive components and honed component/state architecture skills.",
+      "Partnered with mentors to adopt CI-friendly coding standards and cross-browser testing habits."
+    ]
+  }
+]

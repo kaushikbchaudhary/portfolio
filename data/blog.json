@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Designing Multilingual Dashboards for Clinics",
+    "date": "Aug 2024",
+    "excerpt": "Lessons learned building themeable, locale-aware UI for Kali Med Tech's clinician workspace.",
+    "link": "https://example.com/blog/multilingual-dashboards"
+  },
+  {
+    "title": "Streaming ECG Telemetry with WebSocket + BLE",
+    "date": "May 2024",
+    "excerpt": "How I combined WebSocket, BLE, and Chart.js to ship live ECG visualizations and alerts.",
+    "link": "https://example.com/blog/ecg-streaming"
+  },
+  {
+    "title": "Quality Management UX for Medical Teams",
+    "date": "Feb 2024",
+    "excerpt": "Building trust with QA, support, and hardware users through role-based UI flows and rigorous testing.",
+    "link": "https://example.com/blog/qms-ux"
+  }
+]

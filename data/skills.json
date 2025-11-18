@@ -1,0 +1,18 @@
+[
+  {
+    "category": "Core Development",
+    "items": ["React.js", "Next.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "Tailwind CSS", "Material-UI", "Shadcn UI", "Electron.js"]
+  },
+  {
+    "category": "Backend & APIs",
+    "items": ["Node.js", "Express.js", "Mongoose", "MongoDB", "REST APIs", "Authentication", "Role-Based Access"]
+  },
+  {
+    "category": "Real-Time & IoT",
+    "items": ["WebSocket", "BLE", "UART", "MQTT", "Live Telemetry", "Chart.js"]
+  },
+  {
+    "category": "Ops & Collaboration",
+    "items": ["Git", "Docker", "Jira", "Figma", "Testing (Jest / RTL)", "Manual QA", "Documentation"]
+  }
+]
