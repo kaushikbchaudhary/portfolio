@@ -57,6 +57,7 @@ export function Hero() {
                 width={200}
                 height={200}
                 priority
+                className="h-full w-full rounded-full object-cover"
               />
             </div>
           </div>
