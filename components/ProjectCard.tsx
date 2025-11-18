@@ -28,6 +28,9 @@ export function ProjectCard({ project }: Props) {
         />
       </div>
       <div className="flex-1 space-y-3">
+        <span className="badge bg-slate-900/5 text-xs font-semibold uppercase tracking-[0.3em] text-slate-500 dark:bg-white/5 dark:text-slate-300">
+          {project.platform}
+        </span>
         <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
           {project.title}
         </h3>
@@ -49,14 +52,23 @@ export function ProjectCard({ project }: Props) {
         >
           Project Details
         </Link>
-        <Link
-          href={project.links.demo}
-          target="_blank"
-          rel="noreferrer"
-          className="flex-1 rounded-full border border-slate-200 px-4 py-2 text-center text-sm font-semibold text-slate-800 transition hover:-translate-y-0.5 hover:border-indigoBrand hover:text-indigoBrand dark:border-slate-700 dark:text-slate-200"
-        >
-          View Project
-        </Link>
+        {project.links.demo ? (
+          <Link
+            href={project.links.demo}
+            target="_blank"
+            rel="noreferrer"
+            className="flex-1 rounded-full border border-slate-200 px-4 py-2 text-center text-sm font-semibold text-slate-800 transition hover:-translate-y-0.5 hover:border-indigoBrand hover:text-indigoBrand dark:border-slate-700 dark:text-slate-200"
+          >
+            View Project
+          </Link>
+        ) : (
+          <Link
+            href="#contact"
+            className="flex-1 rounded-full border border-slate-200 px-4 py-2 text-center text-sm font-semibold text-slate-800 transition hover:-translate-y-0.5 hover:border-indigoBrand hover:text-indigoBrand dark:border-slate-700 dark:text-slate-200"
+          >
+            Request Demo
+          </Link>
+        )}
         <Link
           href={project.links.github}
           target="_blank"

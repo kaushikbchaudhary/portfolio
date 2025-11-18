@@ -44,6 +44,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             Case Study
           </p>
           <h1 className="text-4xl font-semibold text-slate-900 dark:text-white">{project.title}</h1>
+          <p className="text-sm uppercase tracking-[0.35em] text-slate-400">{project.platform}</p>
           <p className="text-lg text-slate-600 dark:text-slate-300">{project.description}</p>
           <div className="flex flex-wrap gap-3">
             {project.tech.map((tech) => (
@@ -53,14 +54,23 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             ))}
           </div>
           <div className="flex flex-wrap gap-4">
-            <Link
-              href={project.links.demo}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full bg-indigoBrand px-6 py-3 text-sm font-semibold text-white"
-            >
-              Live Demo
-            </Link>
+            {project.links.demo ? (
+              <Link
+                href={project.links.demo}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full bg-indigoBrand px-6 py-3 text-sm font-semibold text-white"
+              >
+                Live Demo
+              </Link>
+            ) : (
+              <Link
+                href="#contact"
+                className="rounded-full bg-indigoBrand px-6 py-3 text-sm font-semibold text-white"
+              >
+                Request Demo
+              </Link>
+            )}
             <Link
               href={project.links.github}
               target="_blank"

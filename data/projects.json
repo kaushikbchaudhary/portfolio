@@ -5,9 +5,10 @@
     "thumbnail": "/projects/oomcardiodev.projectkmt.com_login.png",
     "heroImage": "/projects/oomcardiodev.projectkmt.com_login.png",
     "description": "React + Next.js patient monitoring portal with multilingual dashboards, theming, and clinic-ready workflows.",
+    "platform": "Web Platform",
     "tech": ["React", "Next.js", "Express", "MongoDB", "Tailwind"],
     "links": {
-      "demo": "https://jovial-unicorn-99a6ca.netlify.app/",
+      "demo": "https://live.oomcardio.com/",
       "github": "https://github.com/kaushikbchaudhary"
     },
     "about": "Core web experience for Kali Med Tech that brings ECG data, device status, and analytics to hospital ops teams with responsive layouts and localization.",
@@ -24,9 +25,10 @@
     "thumbnail": "/projects/oea.oomcardio.com_login.png",
     "heroImage": "/projects/oea.oomcardio.com_login.png",
     "description": "Clinic interface for ECG uploads, AI analysis, and live review queues powered by React and WebSocket.",
+    "platform": "Web Platform",
     "tech": ["React", "Next.js", "WebSocket", "REST APIs"],
     "links": {
-      "demo": "https://example.com/oom-ecg",
+      "demo": "https://oea.oomcardio.com/",
       "github": "https://github.com/kaushikbchaudhary"
     },
     "about": "Delivers seamless ECG ingestion with mobile-first views, progress indicators, and alerts for cardiology teams.",
@@ -43,9 +45,10 @@
     "thumbnail": "/projects/qms.oomcardio.com_auth_login.png",
     "heroImage": "/projects/qms.oomcardio.com_auth_login.png",
     "description": "Role-based dashboards that coordinate QA, support, and hardware teams with localization and theming.",
+    "platform": "Web Platform",
     "tech": ["React", "Shadcn UI", "Jest", "RBAC"],
     "links": {
-      "demo": "https://example.com/qms",
+      "demo": "https://qms.oomcardio.com/",
       "github": "https://github.com/kaushikbchaudhary"
     },
     "about": "A modular interface that digitizes CAPA tracking, multilingual comms, and compliance reporting for Kali Med Tech teams.",
@@ -62,9 +65,9 @@
     "thumbnail": "/projects/ble-transfer.svg",
     "heroImage": "/projects/ble-transfer.svg",
     "description": "Electron + React desktop tools streaming multiple ECG devices with Chart.js visualizations.",
+    "platform": "Desktop Application",
     "tech": ["Electron", "React", "Chart.js", "BLE", "WebSocket"],
     "links": {
-      "demo": "https://example.com/ble-monitor",
       "github": "https://github.com/kaushikbchaudhary"
     },
     "about": "Cross-platform monitoring suite capturing device telemetry over BLE and UART, surfacing it to clinicians with real-time graphs.",
@@ -81,9 +84,9 @@
     "thumbnail": "/projects/wifi-sync.svg",
     "heroImage": "/projects/wifi-sync.svg",
     "description": "Inventory and allocation workflows keeping ECG devices, accessories, and licenses in sync across clinics.",
+    "platform": "Desktop Application",
     "tech": ["React", "Next.js", "MongoDB", "Tailwind", "Chart.js"],
     "links": {
-      "demo": "https://example.com/inventory-suite",
       "github": "https://github.com/kaushikbchaudhary"
     },
     "about": "Extends the KMT platform with asset lifecycle management, allocation queues, and alerting for device maintenance windows.",
