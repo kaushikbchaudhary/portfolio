@@ -62,8 +62,8 @@
   {
     "title": "BLE & UART Monitoring Apps",
     "slug": "ble-uart-monitoring-apps",
-    "thumbnail": "/projects/ble-transfer.svg",
-    "heroImage": "/projects/ble-transfer.svg",
+    "thumbnail": "/projects/ble-desktop-app-1.png",
+    "heroImage": "/projects/ble-desktop-app-2.png",
     "description": "Electron + React desktop tools streaming multiple ECG devices with Chart.js visualizations.",
     "platform": "Desktop Application",
     "tech": ["Electron", "React", "Chart.js", "BLE", "WebSocket"],
@@ -76,13 +76,21 @@
       "Crafted Chart.js overlays for arrhythmia, signal strength, and lead health.",
       "Synchronized data back to cloud services via secure WebSocket channels."
     ],
-    "screenshots": ["/projects/ble-transfer.svg"]
+    "screenshots": [
+      "/projects/ble-desktop-app-1.png",
+      "/projects/ble-desktop-app-2.png",
+      "/projects/ble-desktop-app-3.png",
+      "/projects/ble-desktop-app-4.png",
+      "/projects/ble-desktop-app-5.png",
+      "/projects/ble-desktop-app-6.png",
+      "/projects/ble-transfer.svg"
+    ]
   },
   {
     "title": "Inventory & Device Tracking Suite",
     "slug": "inventory-device-tracking-suite",
-    "thumbnail": "/projects/wifi-sync.svg",
-    "heroImage": "/projects/wifi-sync.svg",
+    "thumbnail": "/projects/different-device-connect.png",
+    "heroImage": "/projects/different-device-connect.png",
     "description": "Inventory and allocation workflows keeping ECG devices, accessories, and licenses in sync across clinics.",
     "platform": "Desktop Application",
     "tech": ["React", "Next.js", "MongoDB", "Tailwind", "Chart.js"],
@@ -95,6 +103,13 @@
       "Built status, warranty, and calibration views with filterable, exportable tables.",
       "Automated notifications for returns, servicing, and deployment readiness."
     ],
-    "screenshots": ["/projects/wifi-sync.svg", "/projects/arrhythmia.svg"]
+    "screenshots": [
+      "/projects/different-device-connect.png",
+      "/projects/uart-offline-data-sync-1.png",
+      "/projects/uart-offline-data-sync-2.png",
+      "/projects/uart-offline-data-sync-3.png",
+      "/projects/wifi-sync.svg",
+      "/projects/arrhythmia.svg"
+    ]
   }
 ]
