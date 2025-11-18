@@ -97,6 +97,20 @@ export function Contact() {
                   GitHub
                 </a>
               </li>
+              {siteConfig.links.gitlab && (
+                <li>
+                  <a href={siteConfig.links.gitlab} className="font-semibold text-indigoBrand">
+                    GitLab
+                  </a>
+                </li>
+              )}
+              {siteConfig.links.portfolio && (
+                <li>
+                  <a href={siteConfig.links.portfolio} className="font-semibold text-indigoBrand">
+                    Portfolio
+                  </a>
+                </li>
+              )}
               <li>
                 <a href={siteConfig.links.email} className="font-semibold text-indigoBrand">
                   Email

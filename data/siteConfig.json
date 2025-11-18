@@ -1,14 +1,16 @@
 {
-  "name": "YOUR NAME",
-  "role": "Full-Stack Developer • Medical IoT • Healthcare Systems",
-  "value": "I build high-scale medical platforms, ECG analysis systems, real-time IoT integrations, and backend architectures.",
+  "name": "Kaushik Chaudhary",
+  "role": "Frontend Engineer • React / MERN Stack • Real-Time Systems",
+  "value": "Frontend engineer building React and Next.js products for medical IoT platforms, real-time ECG analytics, and healthcare-grade dashboards.",
   "heroImage": "/avatar.svg",
-  "resumeUrl": "/../kaushik_chaudhary_cv_.pdf",
-  "location": "Remote • Open to Relocation",
+  "resumeUrl": "/resume.pdf",
+  "location": "Ahmedabad, Gujarat, India",
   "links": {
-    "linkedin": "https://www.linkedin.com/in/placeholder",
-    "github": "https://github.com/placeholder",
-    "email": "mailto:hello@example.com",
-    "whatsapp": "https://wa.me/1234567890"
+    "linkedin": "https://www.linkedin.com/in/kaushik-chaudhary-84aa16264/",
+    "github": "https://github.com/kaushikbchaudhary",
+    "email": "mailto:kaushikbchaudhary@gmail.com",
+    "whatsapp": "https://wa.me/919427565176",
+    "gitlab": "https://gitlab.com/kaushik-kmt",
+    "portfolio": "https://jovial-unicorn-99a6ca.netlify.app/"
   }
 }

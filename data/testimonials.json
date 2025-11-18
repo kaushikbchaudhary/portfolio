@@ -1,17 +1,17 @@
 [
   {
-    "quote": "Delivers medical-grade software with the urgency of a startup and the discipline of a regulated enterprise.",
-    "author": "Dr. Lisa Benton",
-    "role": "Chief Medical Officer, CardiaOne"
+    "quote": "Kaushik took ownership of our clinician dashboards and consistently delivered pixel-perfect builds under tight timelines.",
+    "author": "Priya Desai",
+    "role": "Product Manager, Kali Med Tech"
   },
   {
-    "quote": "He translated complex IoT requirements into a scalable platform that our field teams love.",
-    "author": "Rahul Mehta",
-    "role": "VP of Engineering, MedSync"
+    "quote": "His ability to translate IoT telemetry and QA workflows into intuitive UI saved the team countless review cycles.",
+    "author": "Rohit Sutar",
+    "role": "Engineering Lead, Kali Med Tech"
   },
   {
-    "quote": "Trustworthy partner for every FDA audit and reliability review we have endured.",
-    "author": "Emily Gardner",
-    "role": "Director of Quality, VitaSystems"
+    "quote": "Kaushik ramped from intern to independent contributor quickly, pairing curiosity with disciplined testing.",
+    "author": "Neha Patel",
+    "role": "Mentor, BytParity"
   }
 ]

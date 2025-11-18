@@ -1,22 +1,22 @@
 [
   {
-    "title": "12+ medical device integrations",
-    "description": "Unified BLE, Wi-Fi, and serial device data into one telemetry pipeline.",
+    "title": "Hospital dashboards launched in year one",
+    "description": "Shipped responsive clinician workspaces for Kali Med Tech deployments across multiple clinics.",
     "icon": "stethoscope"
   },
   {
-    "title": "ECG analytics & arrhythmia automation",
-    "description": "Built ML-ready ECG workers that flag anomalies within 300ms.",
+    "title": "Realtime ECG & BLE device streaming",
+    "description": "Built live telemetry interfaces handling WebSocket, BLE, and UART integrations for ECG hardware.",
     "icon": "heartbeat"
   },
   {
-    "title": "QMS + ERP for medical workflows",
-    "description": "Digitized CAPA, LIMS, and ISO13485 workflows for regulated teams.",
+    "title": "Inventory & quality workflows",
+    "description": "Owned device inventory tracking, allocation, and QMS UI delivering audit-ready workflows.",
     "icon": "workflow"
   },
   {
-    "title": "Real-time sync systems (BLE/Wi-Fi)",
-    "description": "Delivered device-to-cloud sync with offline resilience in OR settings.",
+    "title": "Commerce-to-tech transition",
+    "description": "Completed BCA while working, moving from commerce to software with MERN stack expertise.",
     "icon": "signal"
   }
 ]

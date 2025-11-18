@@ -1,97 +1,97 @@
 [
   {
-    "title": "OOM Cardio ECG Platform",
-    "slug": "oom-cardio-ecg-platform",
-    "thumbnail": "/projects/oom-cardio.svg",
-    "heroImage": "/projects/oom-cardio.svg",
-    "description": "Continuous ECG ingestion, arrhythmia detection, and clinician dashboards with high-availability nodes.",
-    "tech": ["Next.js", "Node.js", "BullMQ", "PostgreSQL", "AWS"],
+    "title": "KMT Healthcare Platform",
+    "slug": "kmt-healthcare-platform",
+    "thumbnail": "/projects/dashboard.svg",
+    "heroImage": "/projects/dashboard.svg",
+    "description": "React + Next.js patient monitoring portal with multilingual dashboards, theming, and clinic-ready workflows.",
+    "tech": ["React", "Next.js", "Express", "MongoDB", "Tailwind"],
     "links": {
-      "demo": "https://example.com/oom-cardio",
-      "github": "https://github.com/placeholder/oom-cardio"
+      "demo": "https://jovial-unicorn-99a6ca.netlify.app/",
+      "github": "https://github.com/kaushikbchaudhary"
     },
-    "about": "OOM Cardio is a regulated cardiac diagnostics platform that streams millions of ECG samples per hour. It provides real-time clinician dashboards, annotation workflows, and device fleet telemetry.",
+    "about": "Core web experience for Kali Med Tech that brings ECG data, device status, and analytics to hospital ops teams with responsive layouts and localization.",
     "responsibilities": [
-      "Architected ingestion services that scaled to 120M+ samples/day using BullMQ workers.",
-      "Implemented role-based dashboards with live ECG charts and FDA-compliant audit logs.",
-      "Deployed HA infrastructure across AWS Fargate, RDS, and scalable Redis clusters."
+      "Implemented role-based dashboards with configurable themes, multilingual copy, and responsive cards.",
+      "Integrated REST APIs for ECG uploads, AI-assisted insights, and device provisioning workflows.",
+      "Collaborated across backend and QA pods to ensure clean data contracts and reliable releases."
     ],
-    "screenshots": ["/projects/oom-cardio.svg", "/projects/dashboard.svg"]
+    "screenshots": ["/projects/dashboard.svg", "/projects/oom-cardio.svg"]
   },
   {
-    "title": "QMS & ERP Medical Suite",
-    "slug": "qms-erp-medical-suite",
+    "title": "OOM ECG Analyzer Platform",
+    "slug": "oom-ecg-analyzer-platform",
+    "thumbnail": "/projects/oom-cardio.svg",
+    "heroImage": "/projects/oom-cardio.svg",
+    "description": "Clinic interface for ECG uploads, AI analysis, and live review queues powered by React and WebSocket.",
+    "tech": ["React", "Next.js", "WebSocket", "REST APIs"],
+    "links": {
+      "demo": "https://example.com/oom-ecg",
+      "github": "https://github.com/kaushikbchaudhary"
+    },
+    "about": "Delivers seamless ECG ingestion with mobile-first views, progress indicators, and alerts for cardiology teams.",
+    "responsibilities": [
+      "Built upload flows with optimistic UI, chunked transfers, and queued notifications.",
+      "Streamed AI processing states over WebSockets for real-time clinician feedback.",
+      "Ensured accessibility and consistency across tablet, desktop, and kiosk touchpoints."
+    ],
+    "screenshots": ["/projects/oom-cardio.svg"]
+  },
+  {
+    "title": "Quality Management System (QMS)",
+    "slug": "quality-management-system",
     "thumbnail": "/projects/qms-suite.svg",
     "heroImage": "/projects/qms-suite.svg",
-    "description": "Unified QMS, ERP, and CAPA automation for regulated medical manufacturing teams.",
-    "tech": ["Next.js", "NestJS", "PostgreSQL", "Azure", "Terraform"],
+    "description": "Role-based dashboards that coordinate QA, support, and hardware teams with localization and theming.",
+    "tech": ["React", "Shadcn UI", "Jest", "RBAC"],
     "links": {
-      "demo": "https://example.com/qms-suite",
-      "github": "https://github.com/placeholder/qms-suite"
+      "demo": "https://example.com/qms",
+      "github": "https://github.com/kaushikbchaudhary"
     },
-    "about": "A modular suite that digitizes ISO13485 workflows, inventory, CAPA, and supplier quality tracking.",
+    "about": "A modular interface that digitizes CAPA tracking, multilingual comms, and compliance reporting for Kali Med Tech teams.",
     "responsibilities": [
-      "Modeled traceable workflows connecting engineering change orders to shop-floor execution.",
-      "Built PDF automation, digital signatures, and validation-ready audit logs.",
-      "Integrated Azure AD SSO with least-privilege RBAC policies."
+      "Designed UX flows for admins, QA, and support roles with granular permissions.",
+      "Implemented theme and locale switching plus charting for quality indicators.",
+      "Added Jest + React Testing Library coverage for mission-critical modules."
     ],
     "screenshots": ["/projects/qms-suite.svg"]
   },
   {
-    "title": "Wi-Fi Device Sync Manager (ESP32)",
-    "slug": "wifi-device-sync-manager",
-    "thumbnail": "/projects/wifi-sync.svg",
-    "heroImage": "/projects/wifi-sync.svg",
-    "description": "Provisioning and OTA orchestration for ESP32 fleets in surgical environments.",
-    "tech": ["TypeScript", "ESP-IDF", "GraphQL", "AWS IoT Core"],
-    "links": {
-      "demo": "https://example.com/wifi-sync",
-      "github": "https://github.com/placeholder/wifi-sync"
-    },
-    "about": "Managed Wi-Fi credential rotation, OTA updates, and telemetry streaming for hospital device fleets.",
-    "responsibilities": [
-      "Designed secure provisioning handshake with short-lived credentials and Just-In-Time provisioning.",
-      "Built OTA control plane with phased rollouts and health monitoring dashboards.",
-      "Implemented GraphQL APIs powering technician tablet apps for low-friction installs."
-    ],
-    "screenshots": ["/projects/wifi-sync.svg"]
-  },
-  {
-    "title": "BLE Data Transfer App (Android/iOS)",
-    "slug": "ble-data-transfer-app",
+    "title": "BLE & UART Monitoring Apps",
+    "slug": "ble-uart-monitoring-apps",
     "thumbnail": "/projects/ble-transfer.svg",
     "heroImage": "/projects/ble-transfer.svg",
-    "description": "Cross-platform clinical mobile app that syncs BLE vitals into EHR integrations.",
-    "tech": ["React Native", "BLE", "Realm", "FHIR"],
+    "description": "Electron + React desktop tools streaming multiple ECG devices with Chart.js visualizations.",
+    "tech": ["Electron", "React", "Chart.js", "BLE", "WebSocket"],
     "links": {
-      "demo": "https://example.com/ble-transfer",
-      "github": "https://github.com/placeholder/ble-transfer"
+      "demo": "https://example.com/ble-monitor",
+      "github": "https://github.com/kaushikbchaudhary"
     },
-    "about": "Offline-first mobile experiences that pair with medical sensors and push curated vitals into EHRs.",
+    "about": "Cross-platform monitoring suite capturing device telemetry over BLE and UART, surfacing it to clinicians with real-time graphs.",
     "responsibilities": [
-      "Implemented BLE command queue with retries and error heuristics for OR-grade reliability.",
-      "Created clinician-ready UI with patient-safe workflows and data validation.",
-      "Mapped vitals flows into FHIR bundles consumed by Epic/Cerner integrations."
+      "Handled concurrent BLE connections with resilience for OR environments.",
+      "Crafted Chart.js overlays for arrhythmia, signal strength, and lead health.",
+      "Synchronized data back to cloud services via secure WebSocket channels."
     ],
     "screenshots": ["/projects/ble-transfer.svg"]
   },
   {
-    "title": "Arrhythmia Worker Pipeline (Node + BullMQ)",
-    "slug": "arrhythmia-worker-pipeline",
-    "thumbnail": "/projects/arrhythmia.svg",
-    "heroImage": "/projects/arrhythmia.svg",
-    "description": "Distributed workers that process ECG windows and trigger automated cardiologist alerts.",
-    "tech": ["Node.js", "BullMQ", "Redis", "Grafana"],
+    "title": "Inventory & Device Tracking Suite",
+    "slug": "inventory-device-tracking-suite",
+    "thumbnail": "/projects/wifi-sync.svg",
+    "heroImage": "/projects/wifi-sync.svg",
+    "description": "Inventory and allocation workflows keeping ECG devices, accessories, and licenses in sync across clinics.",
+    "tech": ["React", "Next.js", "MongoDB", "Tailwind", "Chart.js"],
     "links": {
-      "demo": "https://example.com/arrhythmia-pipeline",
-      "github": "https://github.com/placeholder/arrhythmia-pipeline"
+      "demo": "https://example.com/inventory-suite",
+      "github": "https://github.com/kaushikbchaudhary"
     },
-    "about": "Streamlines arrhythmia detection with deterministic queues, GPU scoring, and smart alerting.",
+    "about": "Extends the KMT platform with asset lifecycle management, allocation queues, and alerting for device maintenance windows.",
     "responsibilities": [
-      "Optimized GPU inference batching and fallback CPU modes for 4x throughput.",
-      "Implemented cardiologist notification workflows with SLA enforcement.",
-      "Instrumented pipeline metrics with Grafana boards for regulatory readiness."
+      "Modeled device hierarchies, allocation states, and order workflows inside a reusable component system.",
+      "Built status, warranty, and calibration views with filterable, exportable tables.",
+      "Automated notifications for returns, servicing, and deployment readiness."
     ],
-    "screenshots": ["/projects/arrhythmia.svg"]
+    "screenshots": ["/projects/wifi-sync.svg", "/projects/arrhythmia.svg"]
   }
 ]
