@@ -11,13 +11,7 @@ export function Blog() {
         <SectionHeading>Writing & Insights</SectionHeading>
         <div className="grid gap-6 md:grid-cols-3">
           {blogPosts.map((post) => (
-            <Link
-              key={post.title}
-              href={post.link}
-              target="_blank"
-              rel="noreferrer"
-              className="card block"
-            >
+            <Link key={post.title} href={`/blog/${post.slug}`} className="card block">
               <p className="text-xs font-semibold uppercase tracking-[0.35em] text-indigoBrand/70">
                 {post.date}
               </p>
