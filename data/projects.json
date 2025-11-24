@@ -93,7 +93,7 @@
     "heroImage": "/projects/different-device-connect.png",
     "description": "Inventory and allocation workflows keeping ECG devices, accessories, and licenses in sync across clinics.",
     "platform": "Desktop Application",
-    "tech": ["React", "Next.js", "MongoDB", "Tailwind", "Chart.js"],
+    "tech": ["Electron", "React", "Next.js", "MongoDB", "Tailwind", "Chart.js"],
     "links": {
       "github": "https://github.com/kaushikbchaudhary"
     },
