@@ -6,12 +6,12 @@ import { useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
-  { href: "#testimonials", label: "Testimonials" },
-  { href: "#contact", label: "Contact" }
+  { href: "/#about", label: "About" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#testimonials", label: "Testimonials" },
+  { href: "/#contact", label: "Contact" }
 ];
 
 export function Navbar() {
@@ -25,13 +25,13 @@ export function Navbar() {
         </Link>
         <div className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               className="rounded-full px-4 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
           <Link
             href={siteConfig.resumeUrl}
@@ -54,14 +54,14 @@ export function Navbar() {
         <div className="border-t border-slate-200/70 bg-white px-4 py-4 dark:border-slate-800 dark:bg-slate-950 lg:hidden">
           <div className="flex flex-col gap-3">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
                 className="rounded-full px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
             <Link
               href={siteConfig.resumeUrl}
