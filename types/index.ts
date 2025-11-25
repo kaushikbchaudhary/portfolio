@@ -4,6 +4,7 @@ export type SiteConfig = {
   value: string;
   heroImage: string;
   resumeUrl: string;
+  siteUrl: string;
   location: string;
   links: {
     linkedin: string;
