@@ -9,12 +9,27 @@ import { Footer } from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.siteUrl),
   title: `${siteConfig.name} | Full-Stack Medical IoT Engineer`,
   description: siteConfig.value,
+  alternates: {
+    canonical: siteConfig.siteUrl
+  },
+  keywords: [
+    "Kaushik Chaudhary",
+    "Frontend Engineer",
+    "React",
+    "Next.js",
+    "Medical IoT",
+    "Healthcare dashboards",
+    "BLE",
+    "WebSocket",
+    "Electron"
+  ],
   openGraph: {
     title: `${siteConfig.name} | Full-Stack Medical IoT Engineer`,
     description: siteConfig.value,
-    url: "https://portfolio.example.com",
+    url: siteConfig.siteUrl,
     images: [
       {
         url: "/og.png",
@@ -34,6 +49,22 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const personLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: siteConfig.name,
+    jobTitle: siteConfig.role,
+    url: siteConfig.siteUrl,
+    image: `${siteConfig.siteUrl}${siteConfig.heroImage}`,
+    sameAs: [
+      siteConfig.links.linkedin,
+      siteConfig.links.github,
+      siteConfig.links.portfolio ?? "",
+      siteConfig.links.gitlab ?? "",
+      siteConfig.links.email.replace("mailto:", "mailto:")
+    ].filter(Boolean)
+  };
+
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} bg-white text-slate-900 antialiased dark:bg-slate-950`}>
@@ -42,6 +73,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main>{children}</main>
           <Footer />
         </ThemeProvider>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
+        />
       </body>
     </html>
   );
