@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import blogPosts from "@/data/blog.json";
 import { notFound } from "next/navigation";
 
@@ -7,6 +8,17 @@ interface BlogPageProps {
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
+}
+
+export function generateMetadata({ params }: BlogPageProps): Metadata {
+  const post = blogPosts.find((item) => item.slug === params.slug);
+  if (!post) {
+    return { title: "Blog Post Not Found" };
+  }
+  return {
+    title: `${post.title} | Blog`,
+    description: post.excerpt,
+  };
 }
 
 export default function BlogPostPage({ params }: BlogPageProps) {
@@ -29,7 +41,7 @@ export default function BlogPostPage({ params }: BlogPageProps) {
           ))}
         </div>
         <a
-          href="#contact"
+          href="/#contact"
           className="inline-flex items-center rounded-full bg-indigoBrand px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5"
         >
           Discuss this project

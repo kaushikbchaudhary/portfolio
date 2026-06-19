@@ -1,10 +1,11 @@
 {
   "name": "Kaushik Chaudhary",
-  "role": "Frontend Engineer • React / MERN Stack • Real-Time Systems",
-  "value": "Frontend engineer building React and Next.js products for medical IoT platforms, real-time ECG analytics, and healthcare-grade dashboards.",
+  "role": "Full-Stack Engineer • MERN Stack • Real-Time Systems",
+  "value": "Full-stack engineer building React and Next.js products for medical IoT platforms, real-time WebRTC/ECG analytics, and production-grade MERN architectures.",
   "heroImage": "/profile-image.gif",
   "resumeUrl": "/resume.pdf",
-  "siteUrl": "https://kaushik-chaudhary-portfolio.vercel.app/",
+  "siteUrl": "https://portfolio-7767.vercel.app/",
+  "googleVerification": "-Y0dwrNcbkHVVkSMrrhJXXUxHuXYggswTZVK-NlWFQg",
   "location": "Ahmedabad, Gujarat, India",
   "links": {
     "linkedin": "https://www.linkedin.com/in/kaushik-chaudhary-84aa16264/",

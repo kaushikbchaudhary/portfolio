@@ -121,6 +121,11 @@ export function Playground() {
     const handler = (event: KeyboardEvent) => {
       if (status === "over") return;
       const key = event.key.toLowerCase();
+      if (activeGame === "snake" && (status === "running" || status === "idle")) {
+        if (["arrowup", "arrowdown", "arrowleft", "arrowright", " "].includes(key)) {
+          event.preventDefault();
+        }
+      }
       if (key === "w" || key === "arrowup") setDirection((d) => (d === "down" ? d : "up"));
       if (key === "s" || key === "arrowdown") setDirection((d) => (d === "up" ? d : "down"));
       if (key === "a" || key === "arrowleft") setDirection((d) => (d === "right" ? d : "left"));
@@ -129,7 +134,7 @@ export function Playground() {
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [status]);
+  }, [status, activeGame]);
 
   const startOver = () => {
     setSnake(INITIAL_SNAKE);

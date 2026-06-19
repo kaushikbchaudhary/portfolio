@@ -1,23 +1,35 @@
 [
   {
-    "company": "Kali Med Tech",
-    "role": "Frontend Engineer (React / MERN Stack)",
-    "period": "Jan 2024 — Present",
+    "company": "Svitch Bike",
+    "role": "Full-Stack Developer",
+    "period": "Mar 2026 — Apr 2026",
     "bullets": [
-      "Build and maintain the KMT healthcare platform with React, Next.js, Express, and MongoDB across multiple clinics.",
-      "Create multilingual, themeable dashboards plus responsive layouts for clinicians, support, QA, and hardware teams.",
-      "Develop ECG visualization modules that stream BLE/WebSocket data and surface AI insights in real time.",
-      "Own device inventory, allocation, and analytics views while collaborating with backend + QA pods for releases."
+      "Designed and shipped a 23+ module HRMS MVP covering employee onboarding, leave management, attendance tracking, payroll, performance reviews, and document management as a solo engineer in 20 days.",
+      "Architected a secure backend with JWT authentication, refresh token rotation, and role-based access control (RBAC) for multi-level HR permissions.",
+      "Configured MongoDB Replica Sets for data durability and high-availability in a production environment.",
+      "Followed clean code standards throughout — modular architecture, separation of concerns, and consistent API design patterns."
     ]
   },
   {
-    "company": "BytParity",
-    "role": "Frontend Developer Intern",
-    "period": "2023",
+    "company": "Kali Medtech Private Limited",
+    "role": "Full-Stack Engineer",
+    "period": "Jan 2024 — Dec 2025",
     "bullets": [
-      "Learned modern React patterns, Git collaboration, and API integration through production prototypes.",
-      "Converted Figma designs into responsive components and honed component/state architecture skills.",
-      "Partnered with mentors to adopt CI-friendly coding standards and cross-browser testing habits."
+      "Designed and delivered cross-platform ECG desktop applications (Electron + React) supporting Windows, macOS, and Linux.",
+      "Implemented BLE and UART-based device communication for Resting, Holter, and TMT ECG workflows.",
+      "Built offline ECG data extraction, binary parsing, validation, and MQTT-based device-to-cloud upload pipelines.",
+      "Developed real-time waveform visualization, session management, and multi-device connectivity.",
+      "Built an organization-wide Quality Management System (QMS) covering complaints, device/material issues, and regulatory documentation."
+    ]
+  },
+  {
+    "company": "ByteParity Technologies",
+    "role": "Web Designer Intern",
+    "period": "Jul 2023 — Dec 2023",
+    "bullets": [
+      "Converted Adobe XD / Figma design files into pixel-perfect, responsive HTML, CSS, and JavaScript implementations.",
+      "Ensured cross-browser compatibility, mobile responsiveness, and design-to-code accuracy across all deliverables.",
+      "Worked in a professional Git/GitHub and Linux environment with real project workflows."
     ]
   }
 ]

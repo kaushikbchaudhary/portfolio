@@ -1,5 +1,45 @@
 [
   {
+    "title": "Honeyvan D2C E-Commerce Platform",
+    "slug": "honeyvan",
+    "thumbnail": "/projects/honeyvan_preview.png",
+    "heroImage": "/projects/honeyvan_preview.png",
+    "description": "Direct-to-consumer organic raw honey store featuring automated inventory tracking, localized checkout, and direct Telegram support notifications.",
+    "platform": "Web Platform",
+    "tech": ["React", "Node.js", "Express", "MongoDB", "Tailwind", "Telegram API"],
+    "links": {
+      "demo": "https://honeyvan.in/",
+      "github": "https://github.com/kaushikbchaudhary"
+    },
+    "about": "Honeyvan is a farm-direct e-commerce website that sells raw organic honey. Features include automated inventory tracking, farm-to-jar sliders, seamless mobile checkout, and live WhatsApp/Telegram notifications for orders and customer service queries.",
+    "responsibilities": [
+      "Developed a responsive front-end storefront with custom animations and interactive product galleries.",
+      "Built an automated Telegram notification bot that instantly pushes checkout inquiries and customer support chats to the administrator's dashboard.",
+      "Integrated secure mobile checkout workflows and streamlined localized delivery options."
+    ],
+    "screenshots": ["/projects/honeyvan_preview.png"]
+  },
+  {
+    "title": "StrangerConnect Video Matching App",
+    "slug": "strangerconnect",
+    "thumbnail": "/projects/strangerconnect_preview.png",
+    "heroImage": "/projects/strangerconnect_preview.png",
+    "description": "Real-time anonymous video chat platform with active queue matchmaking, low-latency WebRTC streams, and token-based security.",
+    "platform": "Web Platform",
+    "tech": ["React", "Node.js", "WebRTC", "Socket.io", "Express", "Tailwind"],
+    "links": {
+      "demo": "https://strangerconnect.vercel.app/",
+      "github": "https://github.com/kaushikbchaudhary"
+    },
+    "about": "StrangerConnect is a real-time chat platform that anonymously connects random users over video and text streams. Includes security-first authentication, multi-level active queue matchmaking, and optimized grid layouts.",
+    "responsibilities": [
+      "Designed and implemented the front-end user matching state machine using React hooks and Socket.io events.",
+      "Integrated WebRTC peer connections with fallback STUN/TURN configurations for high-reliability video chat.",
+      "Implemented JWT refresh token authentication and role-based permissions to ensure platform safety."
+    ],
+    "screenshots": ["/projects/strangerconnect_preview.png"]
+  },
+  {
     "title": "KMT Healthcare Platform",
     "slug": "kmt-healthcare-platform",
     "thumbnail": "/projects/oomcardiodev.projectkmt.com_login.png",

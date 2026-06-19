@@ -5,11 +5,11 @@
   },
   {
     "category": "Backend & APIs",
-    "items": ["Node.js", "Express.js", "Mongoose", "MongoDB", "REST APIs", "Authentication", "Role-Based Access"]
+    "items": ["Node.js", "Express.js", "Mongoose", "MongoDB", "REST APIs", "Authentication", "Role-Based Access", "Replica Sets", "Telegram API"]
   },
   {
     "category": "Real-Time & IoT",
-    "items": ["WebSocket", "BLE", "UART", "MQTT", "Live Telemetry", "Chart.js"]
+    "items": ["WebSocket", "BLE", "UART", "MQTT", "WebRTC", "Live Telemetry", "Chart.js"]
   },
   {
     "category": "Ops & Collaboration",

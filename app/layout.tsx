@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteConfig.siteUrl
   },
+  verification: {
+    google: siteConfig.googleVerification || undefined
+  },
   keywords: [
     "Kaushik Chaudhary",
     "Frontend Engineer",

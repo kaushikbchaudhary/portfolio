@@ -65,7 +65,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               </Link>
             ) : (
               <Link
-                href="#contact"
+                href="/#contact"
                 className="rounded-full bg-indigoBrand px-6 py-3 text-sm font-semibold text-white"
               >
                 Request Demo

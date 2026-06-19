@@ -20,12 +20,19 @@ export function Contact() {
     }
 
     try {
-      const response = await fetch("/api/contact");
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, email, message })
+      });
       if (response.ok) {
         setStatus("Thanks for reaching out! I'll respond shortly.");
         event.currentTarget.reset();
       } else {
-        setStatus("There was a problem sending your message. Please try again soon.");
+        const data = await response.json().catch(() => ({}));
+        setStatus(data.error || "There was a problem sending your message. Please try again soon.");
       }
     } catch (error) {
       setStatus("Offline? Try emailing me directly.");
