@@ -112,14 +112,16 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 Request Demo
               </Link>
             )}
-            <Link
-              href={project.links.github}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border border-slate-200 px-6 py-3 text-sm font-semibold text-slate-900 dark:border-slate-700 dark:text-white"
-            >
-              GitHub Repo
-            </Link>
+            {"github" in project.links && project.links.github && (
+              <Link
+                href={project.links.github}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full border border-slate-200 px-6 py-3 text-sm font-semibold text-slate-900 dark:border-slate-700 dark:text-white"
+              >
+                GitHub Repo
+              </Link>
+            )}
           </div>
         </div>
         <div className="overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800">

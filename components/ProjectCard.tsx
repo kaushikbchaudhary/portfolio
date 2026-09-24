@@ -69,14 +69,16 @@ export function ProjectCard({ project }: Props) {
             Request Demo
           </Link>
         )}
-        <Link
-          href={project.links.github}
-          target="_blank"
-          rel="noreferrer"
-          className="flex-1 rounded-full bg-slate-900 px-4 py-2 text-center text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-indigoBrand"
-        >
-          GitHub
-        </Link>
+        {project.links.github && (
+          <Link
+            href={project.links.github}
+            target="_blank"
+            rel="noreferrer"
+            className="flex-1 rounded-full bg-slate-900 px-4 py-2 text-center text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-indigoBrand"
+          >
+            GitHub
+          </Link>
+        )}
       </div>
     </motion.div>
   );

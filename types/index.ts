@@ -43,7 +43,7 @@ export type Project = {
   tech: string[];
   links: {
     demo?: string;
-    github: string;
+    github?: string;
   };
   about: string;
   responsibilities: string[];
