@@ -1,13 +1,14 @@
 import type { MetadataRoute } from "next";
-import siteConfig from "@/data/siteConfig.json";
+import { absoluteUrl, siteUrl } from "@/lib/seo";
 
 export default function robots(): MetadataRoute.Robots {
-  const base = siteConfig.siteUrl.replace(/\/$/, "");
   return {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: "/api/"
     },
-    sitemap: `${base}/sitemap.xml`,
+    sitemap: absoluteUrl("/sitemap.xml"),
+    host: siteUrl
   };
 }

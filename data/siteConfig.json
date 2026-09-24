@@ -1,12 +1,34 @@
 {
   "name": "Kaushik Chaudhary",
-  "role": "Full-Stack Engineer • MERN Stack • Real-Time Systems",
+  "role": "Full-Stack Developer • React • Node.js • Electron",
+  "jobTitle": "Full-Stack Developer",
   "value": "Full-stack engineer building React and Next.js products for medical IoT platforms, real-time WebRTC/ECG analytics, and production-grade MERN architectures.",
-  "heroImage": "/profile-image.gif",
+  "seoTitle": "Kaushik Chaudhary – Full-Stack Developer in Ahmedabad",
+  "seoDescription": "Kaushik Chaudhary is a full-stack developer in Ahmedabad, India, building React, Next.js, Node.js and Electron apps for medical IoT, real-time ECG and MERN products.",
+  "keywords": [
+    "Kaushik Chaudhary",
+    "Kaushik Chaudhary developer",
+    "full stack developer Ahmedabad",
+    "React developer Ahmedabad",
+    "Node.js developer India",
+    "MERN stack developer",
+    "Next.js developer",
+    "Electron developer",
+    "medical IoT developer",
+    "BLE UART ECG software",
+    "WebSocket real-time dashboards"
+  ],
+  "heroImage": "/profile-image.webp",
+  "profileImage": "/profile-image.jpg",
   "resumeUrl": "/resume.pdf",
   "siteUrl": "https://portfolio-chaudhary.vercel.app/",
   "googleVerification": "-Y0dwrNcbkHVVkSMrrhJXXUxHuXYggswTZVK-NlWFQg",
   "location": "Ahmedabad, Gujarat, India",
+  "address": {
+    "locality": "Ahmedabad",
+    "region": "Gujarat",
+    "country": "IN"
+  },
   "links": {
     "linkedin": "https://www.linkedin.com/in/kaushik-chaudhary-84aa16264/",
     "github": "https://github.com/kaushikbchaudhary",

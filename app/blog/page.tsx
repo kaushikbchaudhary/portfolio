@@ -1,5 +1,14 @@
+import type { Metadata } from "next";
 import blogPosts from "@/data/blog.json";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Blog – Notes on React, Real-Time Telemetry and Medical IoT",
+  description:
+    "Writing by Kaushik Chaudhary on building medical IoT dashboards, real-time ECG telemetry with WebSocket and BLE, and quality systems.",
+  alternates: { canonical: "/blog" },
+  robots: { index: false, follow: true }
+};
 
 export default function BlogIndexPage() {
   return (

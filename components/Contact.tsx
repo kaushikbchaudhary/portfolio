@@ -95,18 +95,18 @@ export function Contact() {
             </p>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href={siteConfig.links.linkedin} className="font-semibold text-indigoBrand">
+                <a href={siteConfig.links.linkedin} rel="me noopener" target="_blank" className="font-semibold text-indigoBrand">
                   LinkedIn
                 </a>
               </li>
               <li>
-                <a href={siteConfig.links.github} className="font-semibold text-indigoBrand">
+                <a href={siteConfig.links.github} rel="me noopener" target="_blank" className="font-semibold text-indigoBrand">
                   GitHub
                 </a>
               </li>
               {siteConfig.links.gitlab && (
                 <li>
-                  <a href={siteConfig.links.gitlab} className="font-semibold text-indigoBrand">
+                  <a href={siteConfig.links.gitlab} rel="me noopener" target="_blank" className="font-semibold text-indigoBrand">
                     GitLab
                   </a>
                 </li>

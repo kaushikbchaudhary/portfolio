@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import blogPosts from "@/data/blog.json";
 import { notFound } from "next/navigation";
+import { absoluteUrl, authorRef, breadcrumbJsonLd } from "@/lib/seo";
+
+// Posts are outlines for now; keep them out of search results until they are written in full.
+const INDEX_BLOG = false;
 
 interface BlogPageProps {
   params: { slug: string };
@@ -15,9 +19,18 @@ export function generateMetadata({ params }: BlogPageProps): Metadata {
   if (!post) {
     return { title: "Blog Post Not Found" };
   }
+  const path = `/blog/${post.slug}`;
   return {
-    title: `${post.title} | Blog`,
+    title: post.title,
     description: post.excerpt,
+    alternates: { canonical: path },
+    robots: { index: INDEX_BLOG, follow: true },
+    openGraph: {
+      type: "article",
+      url: path,
+      title: post.title,
+      description: post.excerpt
+    }
   };
 }
 
@@ -27,8 +40,28 @@ export default function BlogPostPage({ params }: BlogPageProps) {
     notFound();
   }
 
+  const path = `/blog/${post.slug}`;
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: post.title,
+      description: post.excerpt,
+      datePublished: new Date(`1 ${post.date}`).toISOString().slice(0, 10),
+      url: absoluteUrl(path),
+      mainEntityOfPage: absoluteUrl(path),
+      author: authorRef
+    },
+    breadcrumbJsonLd([
+      { name: "Home", path: "/" },
+      { name: "Blog", path: "/blog" },
+      { name: post.title, path }
+    ])
+  ];
+
   return (
     <article className="section">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="mx-auto max-w-3xl space-y-8 px-4">
         <div className="space-y-3">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-indigoBrand/70">{post.date}</p>

@@ -1,11 +1,22 @@
 export type SiteConfig = {
   name: string;
   role: string;
+  jobTitle: string;
   value: string;
+  seoTitle: string;
+  seoDescription: string;
+  keywords: string[];
   heroImage: string;
+  profileImage: string;
   resumeUrl: string;
   siteUrl: string;
+  googleVerification?: string;
   location: string;
+  address: {
+    locality: string;
+    region: string;
+    country: string;
+  };
   links: {
     linkedin: string;
     github: string;

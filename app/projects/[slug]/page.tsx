@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import projects from "@/data/projects.json";
+import { absoluteUrl, authorRef, breadcrumbJsonLd } from "@/lib/seo";
 
 interface ProjectPageProps {
   params: { slug: string };
@@ -18,11 +19,24 @@ export function generateMetadata({ params }: ProjectPageProps): Metadata {
     return { title: "Project not found" };
   }
 
+  const path = `/projects/${project.slug}`;
+  const title = `${project.title} Case Study`;
+
   return {
-    title: `${project.title} | Project Details` ,
+    title,
     description: project.description,
+    keywords: project.tech,
+    alternates: { canonical: path },
     openGraph: {
-      title: project.title,
+      type: "article",
+      url: path,
+      title,
+      description: project.description,
+      images: [{ url: project.heroImage, alt: `${project.title} screenshot` }]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
       description: project.description,
       images: [project.heroImage]
     }
@@ -36,13 +50,40 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
+  const path = `/projects/${project.slug}`;
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      name: project.title,
+      headline: project.title,
+      description: project.about,
+      url: absoluteUrl(path),
+      image: absoluteUrl(project.heroImage),
+      keywords: project.tech.join(", "),
+      genre: project.platform,
+      author: authorRef,
+      creator: authorRef,
+      ...(project.links.demo ? { sameAs: project.links.demo } : {})
+    },
+    breadcrumbJsonLd([
+      { name: "Home", path: "/" },
+      { name: "Projects", path: "/#projects" },
+      { name: project.title, path }
+    ])
+  ];
+
   return (
     <article className="section">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="mx-auto max-w-5xl space-y-10 px-4">
         <div className="space-y-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-indigoBrand/70">
-            Case Study
-          </p>
+          <nav aria-label="Breadcrumb" className="text-xs font-semibold uppercase tracking-[0.35em] text-indigoBrand/70">
+            <Link href="/#projects" className="hover:text-indigoBrand">
+              Projects
+            </Link>{" "}
+            / Case Study
+          </nav>
           <h1 className="text-4xl font-semibold text-slate-900 dark:text-white">{project.title}</h1>
           <p className="text-sm uppercase tracking-[0.35em] text-slate-400">{project.platform}</p>
           <p className="text-lg text-slate-600 dark:text-slate-300">{project.description}</p>
@@ -82,7 +123,15 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </div>
         <div className="overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800">
-          <Image src={project.heroImage} alt={project.title} width={1200} height={600} className="w-full" />
+          <Image
+            src={project.heroImage}
+            alt={`${project.title} – ${project.platform} built with ${project.tech.slice(0, 3).join(", ")}`}
+            width={1200}
+            height={600}
+            priority
+            sizes="(max-width: 1024px) 100vw, 1024px"
+            className="w-full"
+          />
         </div>
         <section className="grid gap-8 md:grid-cols-2">
           <div className="card">
@@ -101,9 +150,16 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         <section>
           <h2 className="mb-6 text-2xl font-semibold text-slate-900 dark:text-white">Screenshots</h2>
           <div className="grid gap-4 md:grid-cols-2">
-            {project.screenshots.map((shot) => (
+            {project.screenshots.map((shot, index) => (
               <div key={shot} className="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800">
-                <Image src={shot} alt={`${project.title} screenshot`} width={640} height={360} className="w-full" />
+                <Image
+                  src={shot}
+                  alt={`${project.title} screenshot ${index + 1}`}
+                  width={640}
+                  height={360}
+                  sizes="(max-width: 768px) 100vw, 512px"
+                  className="w-full"
+                />
               </div>
             ))}
           </div>

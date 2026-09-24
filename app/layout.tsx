@@ -1,76 +1,69 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import siteConfig from "@/data/siteConfig.json";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { personJsonLd, siteUrl, websiteJsonLd } from "@/lib/seo";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#020617" }
+  ]
+};
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.siteUrl),
-  title: `${siteConfig.name} | Full-Stack Medical IoT Engineer`,
-  description: siteConfig.value,
-  alternates: {
-    canonical: siteConfig.siteUrl
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: siteConfig.seoTitle,
+    template: `%s | ${siteConfig.name}`
   },
+  description: siteConfig.seoDescription,
+  applicationName: `${siteConfig.name} Portfolio`,
+  authors: [{ name: siteConfig.name, url: siteUrl }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: "technology",
   verification: {
     google: siteConfig.googleVerification || undefined
   },
-  keywords: [
-    "Kaushik Chaudhary",
-    "Frontend Engineer",
-    "React",
-    "Next.js",
-    "Medical IoT",
-    "Healthcare dashboards",
-    "BLE",
-    "WebSocket",
-    "Electron"
-  ],
+  keywords: siteConfig.keywords,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1
+    }
+  },
   openGraph: {
-    title: `${siteConfig.name} | Full-Stack Medical IoT Engineer`,
-    description: siteConfig.value,
-    url: siteConfig.siteUrl,
-    images: [
-      {
-        url: "/og.png",
-        width: 1200,
-        height: 630,
-        alt: `${siteConfig.name} portfolio`
-      }
-    ]
+    type: "profile",
+    firstName: siteConfig.name.split(" ")[0],
+    lastName: siteConfig.name.split(" ").slice(1).join(" "),
+    siteName: `${siteConfig.name} Portfolio`,
+    locale: "en_IN",
+    title: siteConfig.seoTitle,
+    description: siteConfig.seoDescription,
+    url: "/"
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | Full-Stack Medical IoT Engineer`,
-    description: siteConfig.value,
-    images: ["/og.png"],
-    creator: siteConfig.name
+    title: siteConfig.seoTitle,
+    description: siteConfig.seoDescription
   }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const personLd = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: siteConfig.name,
-    jobTitle: siteConfig.role,
-    url: siteConfig.siteUrl,
-    image: `${siteConfig.siteUrl}${siteConfig.heroImage}`,
-    sameAs: [
-      siteConfig.links.linkedin,
-      siteConfig.links.github,
-      siteConfig.links.portfolio ?? "",
-      siteConfig.links.gitlab ?? "",
-      siteConfig.links.email.replace("mailto:", "mailto:")
-    ].filter(Boolean)
-  };
-
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} bg-white text-slate-900 antialiased dark:bg-slate-950`}>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body className={`${inter.variable} antialiased`}>
         <ThemeProvider>
           <Navbar />
           <main>{children}</main>
@@ -78,7 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </ThemeProvider>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify([personJsonLd, websiteJsonLd]) }}
         />
       </body>
     </html>

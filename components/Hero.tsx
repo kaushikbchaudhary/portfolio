@@ -53,10 +53,11 @@ export function Hero() {
             <div className="flex h-full w-full items-center justify-center rounded-full bg-white dark:bg-slate-900">
               <Image
                 src={siteConfig.heroImage}
-                alt={siteConfig.name}
-                width={200}
-                height={200}
+                alt={`${siteConfig.name}, ${siteConfig.jobTitle.toLowerCase()} in ${siteConfig.address.locality}`}
+                width={256}
+                height={256}
                 priority
+                unoptimized
                 className="h-full w-full rounded-full object-cover"
               />
             </div>

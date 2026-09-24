@@ -1,25 +1,20 @@
-import blogPosts from "@/data/blog.json";
 import projects from "@/data/projects.json";
-import siteConfig from "@/data/siteConfig.json";
+import { absoluteUrl, siteUrl } from "@/lib/seo";
 import { MetadataRoute } from "next";
 
+// Blog posts are left out while they are noindexed (see app/blog/[slug]/page.tsx).
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = siteConfig.siteUrl.replace(/\/$/, "");
-
-  const staticPages: MetadataRoute.Sitemap = [
-    { url: `${base}/`, lastModified: new Date() },
-    { url: `${base}/blog`, lastModified: new Date() }
-  ];
+  const lastModified = new Date();
 
   const projectPages: MetadataRoute.Sitemap = projects.map((project) => ({
-    url: `${base}/projects/${project.slug}`,
-    lastModified: new Date()
+    url: absoluteUrl(`/projects/${project.slug}`),
+    lastModified,
+    changeFrequency: "monthly",
+    priority: 0.8
   }));
 
-  const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-    url: `${base}/blog/${post.slug}`,
-    lastModified: new Date()
-  }));
-
-  return [...staticPages, ...projectPages, ...blogPages];
+  return [
+    { url: siteUrl, lastModified, changeFrequency: "monthly", priority: 1 },
+    ...projectPages
+  ];
 }
