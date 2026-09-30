@@ -11,6 +11,7 @@ export type SiteConfig = {
   resumeUrl: string;
   siteUrl: string;
   googleVerification?: string;
+  clarityProjectId?: string;
   location: string;
   address: {
     locality: string;
