@@ -3,81 +3,62 @@
 import projects from "@/data/projects.json";
 import { useMemo, useState } from "react";
 import { SectionHeading } from "./SectionHeading";
+import { FeaturedProject } from "./FeaturedProject";
 import { ProjectCard } from "./ProjectCard";
 
 const platformFilters = ["All", "Web Platform", "Desktop Application"] as const;
 
 export function Projects() {
   const [platform, setPlatform] = useState<(typeof platformFilters)[number]>("All");
-  const [tech, setTech] = useState<string | null>(null);
 
-  const filtered = useMemo(() => {
-    return projects.filter((project) => {
-      const matchesPlatform = platform === "All" || project.platform === platform;
-      const matchesTech = tech ? project.tech.includes(tech) : true;
-      return matchesPlatform && matchesTech;
-    });
-  }, [platform, tech]);
+  const filtered = useMemo(
+    () => projects.filter((project) => platform === "All" || project.platform === platform),
+    [platform]
+  );
 
-  const popularTech = Array.from(new Set(projects.flatMap((p) => p.tech))).slice(0, 6);
+  const featured = filtered.find((project) => project.featured);
+  const rest = filtered.filter((project) => project !== featured);
 
   return (
     <section id="projects" className="section">
-      <div className="mx-auto max-w-6xl px-4 space-y-6">
-        <SectionHeading>Featured Projects</SectionHeading>
-
-        <div className="flex flex-wrap items-center gap-3">
-          {platformFilters.map((item) => (
-            <button
-              key={item}
-              type="button"
-              onClick={() => setPlatform(item)}
-              className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${
-                platform === item
-                  ? "border-indigoBrand bg-indigoBrand/10 text-indigoBrand"
-                  : "border-slate-200 text-slate-600 hover:border-indigoBrand hover:text-indigoBrand dark:border-slate-700 dark:text-slate-300"
-              }`}
-            >
-              {item}
-            </button>
-          ))}
-          <div className="ml-auto flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
-            <span className="font-semibold">Quick tech filter:</span>
-            {popularTech.map((tag) => (
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <SectionHeading description="Client work, products from my roles, and things I've built end to end.">
+            Projects
+          </SectionHeading>
+          <div
+            role="group"
+            aria-label="Filter projects by platform"
+            className="mb-10 inline-flex rounded-lg border border-slate-200 p-1 dark:border-slate-800"
+          >
+            {platformFilters.map((item) => (
               <button
-                key={tag}
+                key={item}
                 type="button"
-                onClick={() => setTech((prev) => (prev === tag ? null : tag))}
-                className={`rounded-full border px-3 py-1 font-semibold transition ${
-                  tech === tag
-                    ? "border-indigoBrand bg-indigoBrand/10 text-indigoBrand"
-                    : "border-slate-200 text-slate-600 hover:border-indigoBrand hover:text-indigoBrand dark:border-slate-700 dark:text-slate-300"
+                aria-pressed={platform === item}
+                onClick={() => setPlatform(item)}
+                className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
+                  platform === item
+                    ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900"
+                    : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
                 }`}
               >
-                {tag}
+                {item === "All" ? "All" : item === "Web Platform" ? "Web" : "Desktop"}
               </button>
             ))}
-            {tech && (
-              <button
-                type="button"
-                onClick={() => setTech(null)}
-                className="rounded-full border border-slate-200 px-3 py-1 font-semibold text-slate-600 transition hover:border-indigoBrand hover:text-indigoBrand dark:border-slate-700 dark:text-slate-300"
-              >
-                Clear
-              </button>
-            )}
           </div>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
-          {filtered.map((project) => (
+        {featured && (
+          <div className="mb-6">
+            <FeaturedProject project={featured} />
+          </div>
+        )}
+
+        <div className="grid gap-6 lg:grid-cols-2">
+          {rest.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}
-          {filtered.length === 0 && (
-            <div className="lg:col-span-2 rounded-3xl border border-dashed border-slate-300 bg-white/70 p-8 text-center text-sm text-slate-500 dark:border-slate-700 dark:bg-slate-900/50 dark:text-slate-300">
-              No projects match that filter. Try another platform or clear the tech tag.
-            </div>
-          )}
         </div>
       </div>
     </section>

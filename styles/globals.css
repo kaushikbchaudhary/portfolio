@@ -8,28 +8,47 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
   @apply bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-inter;
 }
 
-.section {
-  @apply py-16 md:py-24;
-}
+@layer components {
+  .section {
+    @apply py-16 md:py-24;
+  }
 
-.card {
-  @apply rounded-3xl border border-slate-200/60 bg-white/80 p-6 shadow-sm shadow-slate-200/70 transition hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900/80 dark:shadow-black/30;
-}
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900/60;
+  }
 
-.text-gradient {
-  background: linear-gradient(120deg, #6366F1, #14b8a6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+  .card-interactive {
+    @apply transition-colors hover:border-slate-300 dark:hover:border-slate-700;
+  }
 
-.badge {
-  @apply inline-flex items-center rounded-full border border-slate-200 px-3 py-1 text-xs font-medium uppercase tracking-wide text-slate-600 dark:border-slate-700 dark:text-slate-300;
+  .text-gradient {
+    background: linear-gradient(120deg, #6366F1, #14b8a6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-md bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-300;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-indigoBrand dark:bg-white dark:text-slate-900 dark:hover:bg-indigo-200;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-800 transition-colors hover:border-slate-900 dark:border-slate-700 dark:text-slate-200 dark:hover:border-slate-400;
+  }
+
+  .link-arrow {
+    @apply inline-flex items-center gap-1 text-sm font-semibold text-indigoBrand hover:underline underline-offset-4 dark:text-indigo-300;
+  }
 }
 
 button:focus-visible,

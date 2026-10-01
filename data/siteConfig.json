@@ -1,10 +1,10 @@
 {
   "name": "Kaushik Chaudhary",
-  "role": "Full-Stack Developer • React • Node.js • Electron",
+  "role": "Full-Stack Engineer · MERN Stack · React / Node.js / Electron",
   "jobTitle": "Full-Stack Developer",
-  "value": "Full-stack engineer building React and Next.js products for medical IoT platforms, real-time WebRTC/ECG analytics, and production-grade MERN architectures.",
+  "value": "Full-stack engineer with 2.5+ years of end-to-end ownership across healthcare platforms, ECG desktop apps, HRMS and ERP systems. Currently building my own D2C brand, Honeyvan, alongside freelance client work.",
   "seoTitle": "Kaushik Chaudhary – Full-Stack Developer in Ahmedabad",
-  "seoDescription": "Kaushik Chaudhary is a full-stack developer in Ahmedabad, India, building React, Next.js, Node.js and Electron apps for medical IoT, real-time ECG and MERN products.",
+  "seoDescription": "Kaushik Chaudhary is a full-stack developer in Ahmedabad, India building AI document extraction with Google Gemini, healthcare and ECG platforms, HRMS and e-commerce apps in React, Next.js and Node.js.",
   "keywords": [
     "Kaushik Chaudhary",
     "Kaushik Chaudhary developer",
@@ -16,12 +16,21 @@
     "Electron developer",
     "medical IoT developer",
     "BLE UART ECG software",
-    "WebSocket real-time dashboards"
+    "WebSocket real-time dashboards",
+    "freelance full stack developer India",
+    "HRMS developer",
+    "Next.js freelance developer",
+    "AI full stack developer",
+    "Google Gemini API developer",
+    "AI document extraction",
+    "Next.js AI developer",
+    "Amazon S3"
   ],
   "heroImage": "/profile-image.webp",
   "profileImage": "/profile-image.jpg",
   "resumeUrl": "/resume.pdf",
   "siteUrl": "https://portfolio-chaudhary.vercel.app/",
+  "lastUpdated": "2026-10-02",
   "googleVerification": "-Y0dwrNcbkHVVkSMrrhJXXUxHuXYggswTZVK-NlWFQg",
   "clarityProjectId": "yqfb512hnr",
   "location": "Ahmedabad, Gujarat, India",
@@ -37,5 +46,9 @@
     "whatsapp": "https://wa.me/919427565176",
     "gitlab": "https://gitlab.com/kaushik-kmt",
     "portfolio": "https://jovial-unicorn-99a6ca.netlify.app/"
+  },
+  "education": {
+    "degree": "Bachelor of Computer Applications (BCA)",
+    "school": "S.P. University, Gujarat"
   }
 }

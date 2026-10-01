@@ -73,58 +73,51 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     ])
   ];
 
+  const screenshots = project.screenshots.filter((shot) => shot !== project.heroImage);
+
   return (
     <article className="section">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div className="mx-auto max-w-5xl space-y-10 px-4">
-        <div className="space-y-4">
-          <nav aria-label="Breadcrumb" className="text-xs font-semibold uppercase tracking-[0.35em] text-indigoBrand/70">
-            <Link href="/#projects" className="hover:text-indigoBrand">
-              Projects
-            </Link>{" "}
-            / Case Study
+      <div className="mx-auto max-w-5xl space-y-12 px-4">
+        <div className="space-y-5">
+          <nav aria-label="Breadcrumb" className="text-sm text-slate-500 dark:text-slate-400">
+            <Link href="/#projects" className="hover:text-slate-900 dark:hover:text-white">
+              ← All projects
+            </Link>
           </nav>
-          <h1 className="text-4xl font-semibold text-slate-900 dark:text-white">{project.title}</h1>
-          <p className="text-sm uppercase tracking-[0.35em] text-slate-400">{project.platform}</p>
-          <p className="text-lg text-slate-600 dark:text-slate-300">{project.description}</p>
-          <div className="flex flex-wrap gap-3">
+          <p className="text-sm font-medium text-slate-500 dark:text-slate-400">{project.platform}</p>
+          <h1 className="text-4xl font-semibold tracking-tight text-slate-900 dark:text-white md:text-5xl">
+            {project.title}
+          </h1>
+          <p className="max-w-3xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">{project.description}</p>
+          <ul className="flex flex-wrap gap-1.5" aria-label="Tech stack">
             {project.tech.map((tech) => (
-              <span key={tech} className="badge">
+              <li key={tech} className="badge">
                 {tech}
-              </span>
+              </li>
             ))}
-          </div>
-          <div className="flex flex-wrap gap-4">
+          </ul>
+          <div className="flex flex-wrap gap-3 pt-2">
             {project.links.demo ? (
-              <Link
-                href={project.links.demo}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full bg-indigoBrand px-6 py-3 text-sm font-semibold text-white"
-              >
-                Live Demo
-              </Link>
+              <a href={project.links.demo} target="_blank" rel="noreferrer" className="btn-primary">
+                Live demo ↗
+              </a>
             ) : (
-              <Link
-                href="/#contact"
-                className="rounded-full bg-indigoBrand px-6 py-3 text-sm font-semibold text-white"
-              >
-                Request Demo
+              <Link href="/#contact" className="btn-primary">
+                Request demo
               </Link>
             )}
             {"github" in project.links && project.links.github && (
-              <Link
-                href={project.links.github}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border border-slate-200 px-6 py-3 text-sm font-semibold text-slate-900 dark:border-slate-700 dark:text-white"
-              >
-                GitHub Repo
-              </Link>
+              <a href={project.links.github} target="_blank" rel="noreferrer" className="btn-secondary">
+                GitHub ↗
+              </a>
             )}
           </div>
+          {"demoNote" in project && project.demoNote && (
+            <p className="text-sm text-slate-500 dark:text-slate-400">{project.demoNote}</p>
+          )}
         </div>
-        <div className="overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800">
+        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900">
           <Image
             src={project.heroImage}
             alt={`${project.title} – ${project.platform} built with ${project.tech.slice(0, 3).join(", ")}`}
@@ -135,37 +128,44 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             className="w-full"
           />
         </div>
-        <section className="grid gap-8 md:grid-cols-2">
-          <div className="card">
-            <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">About Project</h2>
-            <p className="mt-4 text-sm text-slate-600 dark:text-slate-300">{project.about}</p>
+        <section className="grid gap-10 md:grid-cols-[2fr_3fr]">
+          <div>
+            <h2 className="text-xl font-semibold text-slate-900 dark:text-white">About the project</h2>
+            <p className="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-300">{project.about}</p>
           </div>
-          <div className="card">
-            <h2 className="text-2xl font-semibold text-slate-900 dark:text-white">Responsibilities</h2>
-            <ul className="mt-4 space-y-3 text-sm text-slate-600 dark:text-slate-300">
+          <div>
+            <h2 className="text-xl font-semibold text-slate-900 dark:text-white">What I did</h2>
+            <ul className="mt-4 list-disc space-y-3 pl-5 text-base leading-relaxed text-slate-600 marker:text-slate-300 dark:text-slate-300 dark:marker:text-slate-600">
               {project.responsibilities.map((item) => (
-                <li key={item}>• {item}</li>
+                <li key={item}>{item}</li>
               ))}
             </ul>
           </div>
         </section>
-        <section>
-          <h2 className="mb-6 text-2xl font-semibold text-slate-900 dark:text-white">Screenshots</h2>
-          <div className="grid gap-4 md:grid-cols-2">
-            {project.screenshots.map((shot, index) => (
-              <div key={shot} className="overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800">
-                <Image
-                  src={shot}
-                  alt={`${project.title} screenshot ${index + 1}`}
-                  width={640}
-                  height={360}
-                  sizes="(max-width: 768px) 100vw, 512px"
-                  className="w-full"
-                />
-              </div>
-            ))}
-          </div>
-        </section>
+        {screenshots.length > 0 && (
+          <section>
+            <h2 className="mb-6 text-xl font-semibold text-slate-900 dark:text-white">Screenshots</h2>
+            <div className="grid gap-4 md:grid-cols-2">
+              {screenshots.map((shot, index) => (
+                <div key={shot} className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800">
+                  <Image
+                    src={shot}
+                    alt={`${project.title} screenshot ${index + 1}`}
+                    width={640}
+                    height={360}
+                    sizes="(max-width: 768px) 100vw, 512px"
+                    className="w-full"
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+        <div className="border-t border-slate-200 pt-8 dark:border-slate-800">
+          <Link href="/#projects" className="link-arrow">
+            ← Back to all projects
+          </Link>
+        </div>
       </div>
     </article>
   );

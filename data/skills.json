@@ -1,18 +1,87 @@
 [
   {
-    "category": "Core Development",
-    "items": ["React.js", "Next.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "Tailwind CSS", "Material-UI", "Shadcn UI", "Electron.js"]
+    "category": "Frontend",
+    "items": [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "JavaScript (ES6+)",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "Material-UI",
+      "Shadcn UI",
+      "Responsive Design"
+    ]
   },
   {
-    "category": "Backend & APIs",
-    "items": ["Node.js", "Express.js", "Mongoose", "MongoDB", "REST APIs", "Authentication", "Role-Based Access", "Replica Sets", "Telegram API"]
+    "category": "AI & Cloud",
+    "items": [
+      "Google Gemini API",
+      "AI Document Extraction",
+      "Amazon S3",
+      "Zod",
+      "sharp",
+      "ExcelJS",
+      "PDFKit"
+    ]
   },
   {
-    "category": "Real-Time & IoT",
-    "items": ["WebSocket", "BLE", "UART", "MQTT", "WebRTC", "Live Telemetry", "Chart.js"]
+    "category": "Backend",
+    "items": [
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "Socket.io",
+      "WebSocket",
+      "MQTT",
+      "WebRTC",
+      "Telegram API"
+    ]
   },
   {
-    "category": "Ops & Collaboration",
-    "items": ["Git", "Docker", "Jira", "Figma", "Testing (Jest / RTL)", "Manual QA", "Documentation"]
+    "category": "Database",
+    "items": [
+      "MongoDB (Replica Sets)",
+      "Mongoose",
+      "Prisma",
+      "Basic SQL"
+    ]
+  },
+  {
+    "category": "Desktop & Devices",
+    "items": [
+      "Electron.js",
+      "BLE",
+      "UART",
+      "Binary Data Parsing",
+      "Chart.js"
+    ]
+  },
+  {
+    "category": "Auth & Security",
+    "items": [
+      "JWT",
+      "Refresh Token Rotation",
+      "RBAC",
+      "NextAuth",
+      "QR-based Auth"
+    ]
+  },
+  {
+    "category": "Dev & Deployment",
+    "items": [
+      "Git",
+      "GitHub",
+      "Linux",
+      "Netlify",
+      "Vercel",
+      "Docker",
+      "SonarQube",
+      "Postman",
+      "Jira",
+      "Figma",
+      "Testing (Jest / RTL)"
+    ]
   }
 ]

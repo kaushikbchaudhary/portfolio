@@ -1,85 +1,78 @@
-"use client";
-
 import { Project } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { ArrowRightIcon, ArrowUpRightIcon } from "./Icons";
 
 interface Props {
   project: Project;
 }
 
 export function ProjectCard({ project }: Props) {
+  const href = `/projects/${project.slug}`;
+
   return (
-    <motion.div
-      className="card flex flex-col gap-5"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-    >
-      <div className="overflow-hidden rounded-2xl border border-slate-100 dark:border-slate-800">
+    <article className="card card-interactive group flex flex-col gap-5 p-4">
+      <Link
+        href={href}
+        tabIndex={-1}
+        aria-hidden="true"
+        className="block overflow-hidden rounded-xl border border-slate-100 bg-slate-50 dark:border-slate-800 dark:bg-slate-900"
+      >
         <Image
           src={project.thumbnail}
-          alt={project.title}
+          alt=""
           width={640}
           height={360}
-          className="h-48 w-full object-cover"
+          sizes="(max-width: 1024px) 100vw, 560px"
+          className="aspect-video w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
         />
-      </div>
-      <div className="flex-1 space-y-3">
-        <span className="badge bg-slate-900/5 text-xs font-semibold uppercase tracking-[0.3em] text-slate-500 dark:bg-white/5 dark:text-slate-300">
-          {project.platform}
-        </span>
-        <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
-          {project.title}
+      </Link>
+      <div className="flex flex-1 flex-col gap-3 px-2">
+        <p className="text-xs font-medium text-slate-500 dark:text-slate-400">{project.platform}</p>
+        <h3 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-white">
+          <Link href={href} className="hover:text-indigoBrand dark:hover:text-indigo-300">
+            {project.title}
+          </Link>
         </h3>
-        <p className="text-sm text-slate-600 dark:text-slate-300">
+        <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
           {project.description}
         </p>
-        <div className="flex flex-wrap gap-2">
+        <ul className="flex flex-wrap gap-1.5" aria-label="Tech stack">
           {project.tech.map((tech) => (
-            <span key={tech} className="badge">
+            <li key={tech} className="badge">
               {tech}
-            </span>
+            </li>
           ))}
+        </ul>
+        <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-3">
+          <Link href={href} className="link-arrow">
+            Case study
+            <ArrowRightIcon className="h-4 w-4" />
+          </Link>
+          {project.links.demo && (
+            <a
+              href={project.links.demo}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+            >
+              Live demo
+              <ArrowUpRightIcon className="h-4 w-4" />
+            </a>
+          )}
+          {project.links.github && (
+            <a
+              href={project.links.github}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+            >
+              GitHub
+              <ArrowUpRightIcon className="h-4 w-4" />
+            </a>
+          )}
         </div>
       </div>
-      <div className="flex flex-wrap gap-3">
-        <Link
-          href={`/projects/${project.slug}`}
-          className="flex-1 rounded-full border border-indigoBrand/30 px-4 py-2 text-center text-sm font-semibold text-indigoBrand transition hover:-translate-y-0.5 hover:border-indigoBrand"
-        >
-          Project Details
-        </Link>
-        {project.links.demo ? (
-          <Link
-            href={project.links.demo}
-            target="_blank"
-            rel="noreferrer"
-            className="flex-1 rounded-full border border-slate-200 px-4 py-2 text-center text-sm font-semibold text-slate-800 transition hover:-translate-y-0.5 hover:border-indigoBrand hover:text-indigoBrand dark:border-slate-700 dark:text-slate-200"
-          >
-            View Project
-          </Link>
-        ) : (
-          <Link
-            href="#contact"
-            className="flex-1 rounded-full border border-slate-200 px-4 py-2 text-center text-sm font-semibold text-slate-800 transition hover:-translate-y-0.5 hover:border-indigoBrand hover:text-indigoBrand dark:border-slate-700 dark:text-slate-200"
-          >
-            Request Demo
-          </Link>
-        )}
-        {project.links.github && (
-          <Link
-            href={project.links.github}
-            target="_blank"
-            rel="noreferrer"
-            className="flex-1 rounded-full bg-slate-900 px-4 py-2 text-center text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-indigoBrand"
-          >
-            GitHub
-          </Link>
-        )}
-      </div>
-    </motion.div>
+    </article>
   );
 }

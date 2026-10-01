@@ -10,9 +10,14 @@ export type SiteConfig = {
   profileImage: string;
   resumeUrl: string;
   siteUrl: string;
+  lastUpdated: string;
   googleVerification?: string;
   clarityProjectId?: string;
   location: string;
+  education?: {
+    degree: string;
+    school: string;
+  };
   address: {
     locality: string;
     region: string;
@@ -37,6 +42,11 @@ export type Achievement = {
 export type Project = {
   title: string;
   slug: string;
+  updated: string;
+  featured?: boolean;
+  label?: string;
+  demoNote?: string;
+  highlights?: string[];
   thumbnail: string;
   heroImage: string;
   description: string;
@@ -61,12 +71,6 @@ export type ExperienceItem = {
   role: string;
   period: string;
   bullets: string[];
-};
-
-export type Testimonial = {
-  quote: string;
-  author: string;
-  role: string;
 };
 
 export type BlogPost = {

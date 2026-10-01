@@ -1,10 +1,31 @@
 [
   {
+    "company": "Honeyvan (Green Earth Enterprise)",
+    "role": "Founder & Full-Stack Developer",
+    "period": "Apr 2026 — Present",
+    "bullets": [
+      "Built and maintain honeyvan.in end-to-end — a D2C e-commerce platform for a raw honey brand, from architecture to deployment.",
+      "Implemented online payment gateway integration, COD order flow, and parcel/courier service integration for order fulfillment.",
+      "Designed and built a custom admin panel for inventory, order, and content management, with ongoing feature customization.",
+      "Own SEO strategy and social media presence for the brand, alongside FSSAI/GST compliance and product labeling."
+    ]
+  },
+  {
+    "company": "Independent / Multiple Clients",
+    "role": "Freelance Full-Stack Developer",
+    "period": "Apr 2026 — Present",
+    "bullets": [
+      "Delivered production websites for multiple clients using Next.js, Prisma, MongoDB, and NextAuth, including e-commerce and brochure-style marketing sites.",
+      "Handled full project lifecycle — requirements gathering, architecture, deployment (Netlify), and post-launch support/debugging.",
+      "Maintained continuous freelance delivery and client work throughout, alongside building the Honeyvan brand."
+    ]
+  },
+  {
     "company": "Svitch Bike",
     "role": "Full-Stack Developer",
     "period": "Mar 2026 — Apr 2026",
     "bullets": [
-      "Designed and shipped a 23+ module HRMS MVP covering employee onboarding, leave management, attendance tracking, payroll, performance reviews, and document management as a solo engineer in 20 days.",
+      "Designed and shipped a 23+ module HRMS MVP covering employee onboarding, leave management, attendance tracking, payroll, performance reviews, and document management — solo, in 20 days.",
       "Architected a secure backend with JWT authentication, refresh token rotation, and role-based access control (RBAC) for multi-level HR permissions.",
       "Configured MongoDB Replica Sets for data durability and high-availability in a production environment.",
       "Followed clean code standards throughout — modular architecture, separation of concerns, and consistent API design patterns."
@@ -19,7 +40,13 @@
       "Implemented BLE and UART-based device communication for Resting, Holter, and TMT ECG workflows.",
       "Built offline ECG data extraction, binary parsing, validation, and MQTT-based device-to-cloud upload pipelines.",
       "Developed real-time waveform visualization, session management, and multi-device connectivity.",
-      "Built an organization-wide Quality Management System (QMS) covering complaints, device/material issues, and regulatory documentation."
+      "Delivered ERP dashboards and backend APIs including invoicing, ledger handling, and cost automation logic.",
+      "Contributed to OEA (OOM ECG Analyzer) with multi-file uploads, chunked ingestion, and interpretation workflows.",
+      "Designed QR-based cross-device authentication for seamless mobile-to-web login.",
+      "Built an organization-wide Quality Management System (QMS) covering complaints, device/material issues, and regulatory documentation.",
+      "Implemented role-based access control, real-time dashboards, socket-based notifications, and audit-ready PDF generation.",
+      "Collaborated with AI/ML teams on ECG rhythm analysis pipeline integration and testing.",
+      "Supported production deployments in live hospital environments with direct on-call issue resolution."
     ]
   },
   {

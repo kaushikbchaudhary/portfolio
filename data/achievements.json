@@ -1,22 +1,22 @@
 [
   {
-    "title": "Hospital dashboards launched in year one",
-    "description": "Shipped responsive clinician workspaces for Kali Med Tech deployments across multiple clinics.",
-    "icon": "stethoscope"
+    "title": "Speed & ownership",
+    "description": "Shipped a 23-module HRMS solo in under 20 days with production-quality code.",
+    "icon": "speed"
   },
   {
-    "title": "Realtime ECG & BLE device streaming",
-    "description": "Built live telemetry interfaces handling WebSocket, BLE, and UART integrations for ECG hardware.",
-    "icon": "heartbeat"
+    "title": "Founder mindset",
+    "description": "Built and run my own brand, Honeyvan, end-to-end — from engineering to operations and growth.",
+    "icon": "store"
   },
   {
-    "title": "Inventory & quality workflows",
-    "description": "Owned device inventory tracking, allocation, and QMS UI delivering audit-ready workflows.",
-    "icon": "workflow"
+    "title": "Hardware to UI",
+    "description": "From BLE/UART device integration to cloud pipelines to polished UI, deployed in live hospital environments.",
+    "icon": "pulse"
   },
   {
-    "title": "Commerce-to-tech transition",
-    "description": "Completed BCA while working, moving from commerce to software with MERN stack expertise.",
-    "icon": "signal"
+    "title": "Security by default",
+    "description": "JWT, refresh token rotation, RBAC and MongoDB replica sets built in from the start, not as afterthoughts.",
+    "icon": "shield"
   }
 ]

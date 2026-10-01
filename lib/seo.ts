@@ -23,6 +23,9 @@ export const personJsonLd = {
     addressRegion: siteConfig.address.region,
     addressCountry: siteConfig.address.country
   },
+  ...(siteConfig.education
+    ? { alumniOf: { "@type": "CollegeOrUniversity", name: siteConfig.education.school } }
+    : {}),
   knowsAbout: skills.flatMap((category) => category.items),
   sameAs: [siteConfig.links.linkedin, siteConfig.links.github, siteConfig.links.gitlab].filter(Boolean)
 };

@@ -1,22 +1,19 @@
-import { motion } from "framer-motion";
-import { PropsWithChildren } from "react";
+import { ReactNode } from "react";
 
-const variants = {
-  hidden: { opacity: 0, y: 16 },
-  visible: { opacity: 1, y: 0 }
-};
+interface Props {
+  children: ReactNode;
+  description?: ReactNode;
+}
 
-export function SectionHeading({ children }: PropsWithChildren) {
+export function SectionHeading({ children, description }: Props) {
   return (
-    <motion.h2
-      className="mb-6 text-3xl font-semibold tracking-tight text-slate-900 dark:text-white md:text-4xl"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.5 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      variants={variants}
-    >
-      {children}
-    </motion.h2>
+    <div className="mb-10 max-w-2xl space-y-3">
+      <h2 className="text-3xl font-semibold tracking-tight text-slate-900 dark:text-white md:text-4xl">
+        {children}
+      </h2>
+      {description && (
+        <p className="text-base text-slate-600 dark:text-slate-400">{description}</p>
+      )}
+    </div>
   );
 }

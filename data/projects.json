@@ -1,7 +1,52 @@
 [
   {
+    "title": "Artwork Spec Reader",
+    "slug": "artwork-spec-reader",
+    "updated": "2026-10-02",
+    "featured": true,
+    "label": "AI project",
+    "thumbnail": "/projects/doc-extractor-sign-in.png",
+    "heroImage": "/projects/doc-extractor-sign-in.png",
+    "description": "AI document extraction app that reads packaging artwork specification sheets from photos, PDFs and Word files, fills every field, and lets QA teams verify and export them.",
+    "platform": "Web Platform",
+    "tech": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "MongoDB",
+      "Gemini API",
+      "Amazon S3",
+      "Vercel"
+    ],
+    "links": {
+      "demo": "https://doc-extractor-one.vercel.app/"
+    },
+    "demoNote": "Demo access available on request",
+    "about": "Artwork Spec Reader turns a photo or scan of a structured document, such as an artwork approval form or spec sheet, into labelled fields and real tables using Google Gemini, with a confidence score on every value. Low-confidence values are flagged so reviewers only check what matters, then save, lock and export the record. Teams define schemas for each document type, and the app reports which fields were found or missing and warns when a document doesn't match. I designed and built it end to end, from frontend and backend to deployment. It is in active development, and there is no public sign-up: demo access is available on request.",
+    "responsibilities": [
+      "Built AI extraction from images, PDFs and Word documents with Google Gemini, including per-field confidence scores.",
+      "Designed schema-based verification that reports found and missing fields and flags documents that don't match the expected type.",
+      "Created a side-by-side review screen with a zoomable source document next to editable, auto-growing fields.",
+      "Added record locking with admin-approved change requests, plus Excel and PDF export using ExcelJS and PDFKit.",
+      "Implemented automatic rotation across Gemini models to stay within free-tier daily limits.",
+      "Built role-based access (user, admin, developer) with an admin portal for accounts, activity tracking and password resets, and file storage on Amazon S3."
+    ],
+    "screenshots": [
+      "/projects/doc-extractor-sign-in.png"
+    ],
+    "highlights": [
+      "Google Gemini vision model reads photos, scans, PDFs and Word files into labelled fields and real tables",
+      "Per-field confidence scores, with low-confidence values flagged for review",
+      "Schema-based verification reports found and missing fields and warns on the wrong document type",
+      "Automatic rotation across Gemini models to stay within free-tier daily limits",
+      "Files stored on Amazon S3 in production; records export to Excel and PDF"
+    ]
+  },
+  {
     "title": "Rudra Tarpaulin B2B Website & Admin Panel",
     "slug": "rudra-tarpaulin",
+    "updated": "2026-10-02",
     "thumbnail": "/projects/rudra-tarpaulin.jpg",
     "heroImage": "/projects/rudra-tarpaulin.jpg",
     "description": "Client project: SEO-focused B2B catalog site for a Gujarat tarpaulin manufacturer, with a custom admin panel for products, inquiries, content and image uploads.",
@@ -33,9 +78,10 @@
   {
     "title": "Honeyvan D2C E-Commerce Platform",
     "slug": "honeyvan",
+    "updated": "2026-10-02",
     "thumbnail": "/projects/honeyvan_preview.png",
     "heroImage": "/projects/honeyvan_preview.png",
-    "description": "Direct-to-consumer organic raw honey store featuring automated inventory tracking, localized checkout, and direct Telegram support notifications.",
+    "description": "Founder-built D2C store for my raw honey brand, with online payments, cash on delivery, courier integration and a custom admin panel for inventory, orders and content.",
     "platform": "Web Platform",
     "tech": [
       "React",
@@ -49,11 +95,13 @@
       "demo": "https://honeyvan.in/",
       "github": "https://github.com/kaushikbchaudhary"
     },
-    "about": "Honeyvan is a farm-direct e-commerce website that sells raw organic honey. Features include automated inventory tracking, farm-to-jar sliders, seamless mobile checkout, and live WhatsApp/Telegram notifications for orders and customer service queries.",
+    "about": "Honeyvan is my own raw honey brand (Green Earth Enterprise), and honeyvan.in is its direct-to-consumer store, which I built and maintain end-to-end, from architecture to deployment. Customers pay online or choose cash on delivery, orders flow into parcel and courier fulfillment, and a custom admin panel runs inventory, orders and content. Alongside the engineering, I own the brand's SEO, social media, FSSAI/GST compliance and product labeling.",
     "responsibilities": [
-      "Developed a responsive front-end storefront with custom animations and interactive product galleries.",
-      "Built an automated Telegram notification bot that instantly pushes checkout inquiries and customer support chats to the administrator's dashboard.",
-      "Integrated secure mobile checkout workflows and streamlined localized delivery options."
+      "Built and maintain honeyvan.in end-to-end, from architecture to deployment.",
+      "Integrated an online payment gateway, a cash-on-delivery order flow, and parcel/courier services for fulfillment.",
+      "Designed a custom admin panel for inventory, order and content management, with ongoing feature customization.",
+      "Built a Telegram notification bot that pushes checkout inquiries and customer support chats to the admin instantly.",
+      "Own the brand's SEO strategy and social media presence."
     ],
     "screenshots": [
       "/projects/honeyvan_preview.png"
@@ -62,6 +110,7 @@
   {
     "title": "StrangerConnect Video Matching App",
     "slug": "strangerconnect",
+    "updated": "2026-10-02",
     "thumbnail": "/projects/strangerconnect_preview.png",
     "heroImage": "/projects/strangerconnect_preview.png",
     "description": "Real-time anonymous video chat platform with active queue matchmaking, low-latency WebRTC streams, and token-based security.",
@@ -91,6 +140,7 @@
   {
     "title": "KMT Healthcare Platform",
     "slug": "kmt-healthcare-platform",
+    "updated": "2026-10-02",
     "thumbnail": "/projects/oomcardiodev.projectkmt.com_login.png",
     "heroImage": "/projects/oomcardiodev.projectkmt.com_login.png",
     "description": "React + Next.js patient monitoring portal with multilingual dashboards, theming, and clinic-ready workflows.",
@@ -120,6 +170,7 @@
   {
     "title": "OOM ECG Analyzer Platform",
     "slug": "oom-ecg-analyzer-platform",
+    "updated": "2026-10-02",
     "thumbnail": "/projects/oea.oomcardio.com_login.png",
     "heroImage": "/projects/oea.oomcardio.com_login.png",
     "description": "Clinic interface for ECG uploads, AI analysis, and live review queues powered by React and WebSocket.",
@@ -136,8 +187,9 @@
     },
     "about": "Delivers seamless ECG ingestion with mobile-first views, progress indicators, and alerts for cardiology teams.",
     "responsibilities": [
-      "Built upload flows with optimistic UI, chunked transfers, and queued notifications.",
+      "Built multi-file upload flows with chunked ingestion, optimistic UI and queued notifications.",
       "Streamed AI processing states over WebSockets for real-time clinician feedback.",
+      "Built ECG interpretation workflows and worked with AI/ML teams on rhythm analysis pipeline integration and testing.",
       "Ensured accessibility and consistency across tablet, desktop, and kiosk touchpoints."
     ],
     "screenshots": [
@@ -147,9 +199,10 @@
   {
     "title": "Quality Management System (QMS)",
     "slug": "quality-management-system",
+    "updated": "2026-10-02",
     "thumbnail": "/projects/qms.oomcardio.com_auth_login.png",
     "heroImage": "/projects/qms.oomcardio.com_auth_login.png",
-    "description": "Role-based dashboards that coordinate QA, support, and hardware teams with localization and theming.",
+    "description": "Organization-wide quality and compliance platform covering complaints, device/material issues and regulatory documentation, with role-based dashboards.",
     "platform": "Web Platform",
     "tech": [
       "React",
@@ -161,9 +214,11 @@
       "demo": "https://qms.oomcardio.com/",
       "github": "https://github.com/kaushikbchaudhary"
     },
-    "about": "A modular interface that digitizes CAPA tracking, multilingual comms, and compliance reporting for Kali Med Tech teams.",
+    "about": "An organization-wide Quality Management System for Kali Medtech that digitizes complaints, device and material issues, CAPA tracking and regulatory documentation, with multilingual UI and audit-ready reporting.",
     "responsibilities": [
-      "Designed UX flows for admins, QA, and support roles with granular permissions.",
+      "Designed UX flows for admins, QA, and support roles with role-based access control.",
+      "Built real-time dashboards and socket-based notifications so teams see new issues as they are raised.",
+      "Implemented audit-ready PDF generation for compliance and regulatory documentation.",
       "Implemented theme and locale switching plus charting for quality indicators.",
       "Added Jest + React Testing Library coverage for mission-critical modules."
     ],
@@ -174,25 +229,28 @@
   {
     "title": "BLE & UART Monitoring Apps",
     "slug": "ble-uart-monitoring-apps",
+    "updated": "2026-10-02",
     "thumbnail": "/projects/ble-desktop-app-1.png",
     "heroImage": "/projects/ble-desktop-app-2.png",
-    "description": "Electron + React desktop tools streaming multiple ECG devices with Chart.js visualizations.",
+    "description": "Cross-platform Electron + React ECG apps with BLE/UART device communication, real-time waveforms and MQTT cloud upload, deployed in live hospital environments.",
     "platform": "Desktop Application",
     "tech": [
       "Electron",
       "React",
-      "Chart.js",
       "BLE",
-      "WebSocket"
+      "UART",
+      "MQTT",
+      "Chart.js"
     ],
     "links": {
       "github": "https://github.com/kaushikbchaudhary"
     },
-    "about": "Cross-platform monitoring suite capturing device telemetry over BLE and UART, surfacing it to clinicians with real-time graphs.",
+    "about": "Cross-platform ECG desktop applications for Windows, macOS and Linux that connect to ECG hardware over BLE and UART for Resting, Holter and TMT workflows, render waveforms in real time, and upload recordings to the cloud. Deployed in live hospital environments.",
     "responsibilities": [
-      "Handled concurrent BLE connections with resilience for OR environments.",
-      "Crafted Chart.js overlays for arrhythmia, signal strength, and lead health.",
-      "Synchronized data back to cloud services via secure WebSocket channels."
+      "Implemented BLE and UART device communication for Resting, Holter and TMT ECG workflows, with multi-device connectivity.",
+      "Built real-time waveform visualization and session management with Chart.js overlays for signal and lead health.",
+      "Built offline ECG data extraction, binary parsing, validation and MQTT-based device-to-cloud upload pipelines.",
+      "Supported production deployments in live hospital environments with direct on-call issue resolution."
     ],
     "screenshots": [
       "/projects/ble-desktop-app-1.png",
@@ -207,6 +265,7 @@
   {
     "title": "Inventory & Device Tracking Suite",
     "slug": "inventory-device-tracking-suite",
+    "updated": "2026-10-02",
     "thumbnail": "/projects/different-device-connect.png",
     "heroImage": "/projects/different-device-connect.png",
     "description": "Inventory and allocation workflows keeping ECG devices, accessories, and licenses in sync across clinics.",
