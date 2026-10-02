@@ -125,3 +125,16 @@ export const ShieldIcon = (props: SVGProps<SVGSVGElement>) => (
     <path d="m9 12 2 2 4-4" />
   </Icon>
 );
+
+export const ChatIcon = (props: SVGProps<SVGSVGElement>) => (
+  <Icon {...props}>
+    <path d="M4 5h16v11H9l-5 4V5Z" />
+    <path d="M8 9.5h8M8 12.5h5" />
+  </Icon>
+);
+
+export const SendIcon = (props: SVGProps<SVGSVGElement>) => (
+  <Icon {...props}>
+    <path d="M4 12 20 4l-6 16-3-7-7-1Z" />
+  </Icon>
+);
