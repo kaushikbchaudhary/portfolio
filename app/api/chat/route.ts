@@ -1,12 +1,13 @@
 import { buildSystemPrompt } from "@/lib/chatContext";
 
-const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
-const MODEL = process.env.GROQ_MODEL || "openai/gpt-oss-120b";
+// Gemini's OpenAI-compatible endpoint (free tier: https://aistudio.google.com/apikey).
+const GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions";
+const MODEL = process.env.GEMINI_MODEL || "gemini-flash-latest";
 
 const MAX_MESSAGES = 12;
 const MAX_CHARS = 1000;
 
-// Best-effort per-IP limit to protect the free Groq quota. In-memory, so it
+// Best-effort per-IP limit to protect the free Gemini quota. In-memory, so it
 // resets on cold starts and isn't shared across serverless instances.
 const WINDOW_MS = 60_000;
 const MAX_PER_WINDOW = 10;
@@ -35,7 +36,7 @@ function parseMessages(body: unknown): ChatMessage[] | null {
 }
 
 export async function POST(req: Request) {
-  const apiKey = process.env.GROQ_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     return Response.json({ error: "Chat is not configured." }, { status: 503 });
   }
@@ -50,27 +51,27 @@ export async function POST(req: Request) {
     return Response.json({ error: "Invalid request." }, { status: 400 });
   }
 
-  const upstream = await fetch(GROQ_URL, {
+  const upstream = await fetch(GEMINI_URL, {
     method: "POST",
     headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
     body: JSON.stringify({
       model: MODEL,
       messages: [{ role: "system", content: buildSystemPrompt() }, ...messages],
       temperature: 0.4,
-      // Reasoning models spend tokens thinking before they answer, so keep effort low.
-      max_tokens: 1000,
-      ...(MODEL.startsWith("openai/gpt-oss") ? { reasoning_effort: "low" } : {}),
+      // Gemini counts its thinking tokens against this limit, so leave headroom.
+      max_tokens: 2048,
+      reasoning_effort: "low",
       stream: true
     })
   });
 
   if (!upstream.ok || !upstream.body) {
-    console.error("Groq error", upstream.status, await upstream.text().catch(() => ""));
+    console.error("Gemini error", upstream.status, await upstream.text().catch(() => ""));
     const status = upstream.status === 429 ? 429 : 502;
     return Response.json({ error: "The assistant is busy right now. Please try again shortly." }, { status });
   }
 
-  // Convert Groq's OpenAI-style SSE stream into a plain text stream of tokens.
+  // Convert Gemini's OpenAI-style SSE stream into a plain text stream of tokens.
   const decoder = new TextDecoder();
   const encoder = new TextEncoder();
   let buffer = "";
