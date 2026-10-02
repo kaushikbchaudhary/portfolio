@@ -43,6 +43,8 @@ Education: ${siteConfig.education ? `${siteConfig.education.degree}, ${siteConfi
 Email: ${siteConfig.links.email.replace("mailto:", "")}
 LinkedIn: ${siteConfig.links.linkedin}
 GitHub: ${siteConfig.links.github}
+Instagram: ${siteConfig.links.instagram}
+Phone / WhatsApp: ${siteConfig.links.phone} (${siteConfig.links.whatsapp})
 Resume: ${siteConfig.resumeUrl}
 
 Experience:

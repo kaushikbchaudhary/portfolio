@@ -27,7 +27,7 @@ export const personJsonLd = {
     ? { alumniOf: { "@type": "CollegeOrUniversity", name: siteConfig.education.school } }
     : {}),
   knowsAbout: skills.flatMap((category) => category.items),
-  sameAs: [siteConfig.links.linkedin, siteConfig.links.github, siteConfig.links.gitlab].filter(Boolean)
+  sameAs: [siteConfig.links.linkedin, siteConfig.links.github, siteConfig.links.gitlab, siteConfig.links.instagram].filter(Boolean)
 };
 
 export const websiteJsonLd = {

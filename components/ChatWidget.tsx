@@ -1,9 +1,22 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ChatIcon, CloseIcon, SendIcon } from "./Icons";
+import siteConfig from "@/data/siteConfig.json";
+import { ChatIcon, CloseIcon, MailIcon, PhoneIcon, SendIcon } from "./Icons";
 
-type Message = { role: "user" | "assistant"; content: string };
+// `failed` replies are UI-only: they show direct contact details and aren't sent to the model.
+type Message = { role: "user" | "assistant"; content: string; failed?: boolean };
+
+const FALLBACK =
+  "I can't answer right now (the free AI limit may have been reached). You can reach Kaushik directly:";
+
+const CONTACTS = [
+  ...(siteConfig.links.phone
+    ? [{ href: `tel:${siteConfig.links.phone.replace(/\s/g, "")}`, label: siteConfig.links.phone, Icon: PhoneIcon }]
+    : []),
+  ...(siteConfig.links.whatsapp ? [{ href: siteConfig.links.whatsapp, label: "WhatsApp", Icon: ChatIcon }] : []),
+  { href: siteConfig.links.email, label: siteConfig.links.email.replace("mailto:", ""), Icon: MailIcon }
+];
 
 const SUGGESTIONS = [
   "What's Kaushik's tech stack?",
@@ -41,20 +54,21 @@ export function ChatWidget() {
     setInput("");
     setLoading(true);
 
-    const setReply = (reply: string) =>
-      setMessages((prev) => [...prev.slice(0, -1), { role: "assistant", content: reply }]);
+    const setReply = (reply: string, failed = false) =>
+      setMessages((prev) => [...prev.slice(0, -1), { role: "assistant", content: reply, failed }]);
 
     try {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        // The greeting is UI-only, so it isn't sent to the model.
-        body: JSON.stringify({ messages: history.slice(1) })
+        // The greeting and failed replies are UI-only, so they aren't sent to the model.
+        body: JSON.stringify({
+          messages: history.slice(1).filter((m) => !m.failed).map(({ role, content }) => ({ role, content }))
+        })
       });
 
       if (!res.ok || !res.body) {
-        const data = await res.json().catch(() => null);
-        setReply(data?.error ?? "Something went wrong. Please try again.");
+        setReply(FALLBACK, true);
         return;
       }
 
@@ -67,9 +81,9 @@ export function ChatWidget() {
         reply += decoder.decode(value, { stream: true });
         setReply(reply);
       }
-      if (!reply) setReply("Sorry, I couldn't come up with an answer. Please try rephrasing.");
+      if (!reply) setReply(FALLBACK, true);
     } catch {
-      setReply("Network error. Please check your connection and try again.");
+      setReply(FALLBACK, true);
     } finally {
       setLoading(false);
     }
@@ -110,6 +124,23 @@ export function ChatWidget() {
                   }
                 >
                   {m.content || <span className="animate-pulse">Thinking…</span>}
+                  {m.failed ? (
+                    <ul className="mt-2 space-y-1.5">
+                      {CONTACTS.map(({ href, label, Icon }) => (
+                        <li key={href}>
+                          <a
+                            href={href}
+                            target={href.startsWith("http") ? "_blank" : undefined}
+                            rel="noopener"
+                            className="inline-flex items-center gap-2 font-medium text-indigoBrand underline-offset-4 hover:underline dark:text-indigo-300"
+                          >
+                            <Icon className="h-4 w-4 shrink-0" />
+                            {label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
                 </div>
               </div>
             ))}

@@ -1,11 +1,12 @@
 import siteConfig from "@/data/siteConfig.json";
-import { ArrowUpRightIcon, GitHubIcon, LinkedInIcon, MailIcon, PhoneIcon } from "./Icons";
+import { ArrowUpRightIcon, GitHubIcon, InstagramIcon, LinkedInIcon, MailIcon, PhoneIcon } from "./Icons";
 
 const email = siteConfig.links.email.replace("mailto:", "");
 
 const channels = [
   { href: siteConfig.links.linkedin, label: "LinkedIn", Icon: LinkedInIcon },
   { href: siteConfig.links.github, label: "GitHub", Icon: GitHubIcon },
+  { href: siteConfig.links.instagram, label: "Instagram", Icon: InstagramIcon },
   ...(siteConfig.links.whatsapp
     ? [{ href: siteConfig.links.whatsapp, label: "WhatsApp", Icon: PhoneIcon }]
     : [])

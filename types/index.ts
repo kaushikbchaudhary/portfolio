@@ -28,6 +28,8 @@ export type SiteConfig = {
     github: string;
     email: string;
     whatsapp?: string;
+    phone?: string;
+    instagram?: string;
     gitlab?: string;
     portfolio?: string;
   };

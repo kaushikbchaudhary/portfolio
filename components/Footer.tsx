@@ -12,6 +12,7 @@ export function Footer() {
           <Link href="/#projects" className="hover:text-slate-900 dark:hover:text-white">Projects</Link>
           <a href={siteConfig.links.github} target="_blank" rel="me noopener" className="hover:text-slate-900 dark:hover:text-white">GitHub</a>
           <a href={siteConfig.links.linkedin} target="_blank" rel="me noopener" className="hover:text-slate-900 dark:hover:text-white">LinkedIn</a>
+          <a href={siteConfig.links.instagram} target="_blank" rel="me noopener" className="hover:text-slate-900 dark:hover:text-white">Instagram</a>
           <a href={siteConfig.resumeUrl} className="hover:text-slate-900 dark:hover:text-white">Resume</a>
         </nav>
       </div>

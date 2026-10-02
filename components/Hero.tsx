@@ -2,11 +2,12 @@ import projects from "@/data/projects.json";
 import siteConfig from "@/data/siteConfig.json";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRightIcon, DownloadIcon, GitHubIcon, LinkedInIcon, MailIcon, MapPinIcon } from "./Icons";
+import { ArrowRightIcon, DownloadIcon, GitHubIcon, InstagramIcon, LinkedInIcon, MailIcon, MapPinIcon } from "./Icons";
 
 const socials = [
   { href: siteConfig.links.github, label: "GitHub", Icon: GitHubIcon },
   { href: siteConfig.links.linkedin, label: "LinkedIn", Icon: LinkedInIcon },
+  { href: siteConfig.links.instagram, label: "Instagram", Icon: InstagramIcon },
   { href: siteConfig.links.email, label: "Email", Icon: MailIcon }
 ];
 

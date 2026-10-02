@@ -138,3 +138,11 @@ export const SendIcon = (props: SVGProps<SVGSVGElement>) => (
     <path d="M4 12 20 4l-6 16-3-7-7-1Z" />
   </Icon>
 );
+
+export const InstagramIcon = (props: SVGProps<SVGSVGElement>) => (
+  <Icon {...props}>
+    <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+    <circle cx="12" cy="12" r="4" />
+    <path d="M17.2 6.8h.01" />
+  </Icon>
+);
