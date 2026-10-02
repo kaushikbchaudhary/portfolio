@@ -1,7 +1,7 @@
 import { buildSystemPrompt } from "@/lib/chatContext";
 
 const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
-const MODEL = process.env.GROQ_MODEL || "llama-3.3-70b-versatile";
+const MODEL = process.env.GROQ_MODEL || "openai/gpt-oss-120b";
 
 const MAX_MESSAGES = 12;
 const MAX_CHARS = 1000;
@@ -57,7 +57,9 @@ export async function POST(req: Request) {
       model: MODEL,
       messages: [{ role: "system", content: buildSystemPrompt() }, ...messages],
       temperature: 0.4,
-      max_tokens: 500,
+      // Reasoning models spend tokens thinking before they answer, so keep effort low.
+      max_tokens: 1000,
+      ...(MODEL.startsWith("openai/gpt-oss") ? { reasoning_effort: "low" } : {}),
       stream: true
     })
   });
